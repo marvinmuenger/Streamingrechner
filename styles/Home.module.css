@@ -1,31 +1,41 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 1rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.chart {
+  width: 50rem;
+  height: 20rem;
+}
+
+.select {
+  width: 15rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1rem;
+  color: #333;
+  display: inline-block;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .main {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
 }
 
 .title a {
@@ -42,7 +52,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .title,
