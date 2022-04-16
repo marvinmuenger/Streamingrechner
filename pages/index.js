@@ -19,7 +19,7 @@ const data = {
   labels: ['Test 1', 'Test 2'],
   datasets: [{
     label: 'Rechenzentren',
-    data: [1, 3.2],
+    data: [1, 1],
     stack:"",
     backgroundColor: [
       'rgba(54, 162, 235, 0.6)',
