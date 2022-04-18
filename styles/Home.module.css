@@ -12,12 +12,12 @@
 }
 
 .select {
-  width: 15rem;
-  height: 3rem;
+  width: 12rem;
+  height: 2.4rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
-  padding: 0 1rem;
-  font-size: 1.25rem;
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
   margin: 1rem;
   color: #333;
@@ -26,6 +26,26 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  font-family: Arial;
+  background: url(../public/arrow.png) 95% / 8% no-repeat white;
+}
+
+.input {
+  width: 12rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1rem;
+  color: #333;
+  display: block;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: Arial;
 }
 
 .main {

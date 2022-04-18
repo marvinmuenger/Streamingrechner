@@ -90,10 +90,12 @@ export default function Home() {
             <option value="SD">Schweiz</option>
             <option value="HD">Deutschland</option>
         </select>
+
+        <input id="hours" type="number" min="1" className={styles.input} defaultValue="1" />
       </div>
 
       <div className={styles.chart}>
-        <h2>CO2 Emissionen von 1 Stunde Videostreaming</h2>
+        <h2>CO<sub>2</sub>-Emissionen von 1 Stunde Videostreaming</h2>
         <Bar
           data={data}
           width={10}
