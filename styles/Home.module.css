@@ -1,5 +1,5 @@
 .container {
-  padding: 0 1rem;
+padding: 0 1rem;
 }
 
 .wrapper {
@@ -12,14 +12,14 @@
 }
 
 .select {
-  width: 12rem;
-  height: 2.4rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 0 0.5rem;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  height: 3.7rem;
+  width: 100%;
+  border: 0px;
   font-size: 1.1rem;
   font-weight: 500;
-  margin: 1rem;
+  margin: 0;
   color: #333;
   display: inline-block;
   background-color: #fff;
@@ -27,20 +27,40 @@
   -moz-appearance: none;
   appearance: none;
   font-family: Arial;
-  background: url(../public/arrow.png) 95% / 8% no-repeat white;
+  background: url(../public/arrow.png) 90% / 5% no-repeat white;
+  background-position: 96% 1.6rem;
+}
+
+.selectwrap {
+  border: 1px solid rgb(232, 227, 227);
+  border-radius: 0;
+  padding: 0 5px;
+  width: 14rem;
+  background-color:#fff;
+  position:relative;
+  display: inline-block;
+  margin: 1rem 0;
+}
+.selectwrap label{
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #777;
+  padding: 0 8px;  
+  position: absolute;
+  top:6px;
 }
 
 .input {
-  width: 12rem;
-  height: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 0 1rem;
-  font-size: 1.25rem;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  height: 3.2rem;
+  width: 100%;
+  border: 0px;
+  font-size: 1.1rem;
   font-weight: 500;
-  margin: 1rem;
+  margin: 0;
   color: #333;
-  display: block;
+  display: inline-block;
   background-color: #fff;
   -webkit-appearance: none;
   -moz-appearance: none;

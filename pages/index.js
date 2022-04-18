@@ -71,27 +71,51 @@ export default function Home() {
         </h1>
 
       <div className={styles.wrapper}>
-        <select id="device" className={styles.select}>
-            <option value="television">Fernsehgerät</option>
-            <option value="smartphone">Desktop Computer</option>
-            <option value="laptop">Notebook</option>
-            <option value="laptop">Tablet</option>
-            <option value="laptop">Smartphone</option>
-        </select> 
 
-        <select id="auflösung" className={styles.select}>
-            <option value="SD">SD</option>
-            <option value="HD">HD</option>
-            <option value="UHD">UHD 4K</option>
-        </select>
+        <div className={styles.selectwrap}>
+          <label>Gerät</label>
+          <select id="device" className={styles.select}>
+              <option value="television">Fernsehgerät</option>
+              <option value="smartphone">Desktop Computer</option>
+              <option value="laptop">Notebook</option>
+              <option value="laptop">Tablet</option>
+              <option value="laptop">Smartphone</option>
+          </select> 
+        </div>
 
-        <select id="land" className={styles.select}>
-            <option value="UHD">Welt (2020)</option>
-            <option value="SD">Schweiz</option>
-            <option value="HD">Deutschland</option>
-        </select>
+        <div className={styles.selectwrap}>
+          <label>Auflösung</label>
+          <select id="auflösung" className={styles.select}>
+              <option value="SD">SD</option>
+              <option value="HD">HD</option>
+              <option value="UHD">UHD 4K</option>
+          </select>
+        </div>
 
-        <input id="hours" type="number" min="1" className={styles.input} defaultValue="1" />
+        <div className={styles.selectwrap}>
+          <label>Netzwerk</label>
+          <select id="netzwerk" className={styles.select}>
+              <option value="SD">WLAN</option>
+              <option value="SD">3G</option>
+              <option value="HD">4G</option>
+              <option value="UHD">5G</option>
+          </select>
+        </div>
+
+        <div className={styles.selectwrap}>
+          <label>Land</label>
+          <select id="land" className={styles.select}>
+              <option value="UHD">Welt (2020)</option>
+              <option value="SD">Schweiz</option>
+              <option value="HD">Deutschland</option>
+          </select>
+        </div>
+
+        <div></div>
+        <div className={styles.selectwrap}>
+          <label>Stunden</label>
+          <input id="hours" type="number" min="1" className={styles.input} defaultValue="1" />
+        </div>
       </div>
 
       <div className={styles.chart}>
