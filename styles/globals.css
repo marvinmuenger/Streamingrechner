@@ -2,12 +2,23 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-align: center;
+  font-family: Avenir;
+  text-align: left;
+    background: #F5F7F6;
+  mix-blend-mode: normal;
+  color: #2C2C2C;
 }
 
-select::-ms-expand {
-  display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
+  font-family: Avenir;
+  border-radius: 0.75rem;
+  color: #2C2C2C;
+  width: 9rem;
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+  width: 12rem !important;
 }
 
 a {
