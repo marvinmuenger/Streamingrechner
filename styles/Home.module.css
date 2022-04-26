@@ -63,9 +63,9 @@
   margin: 1.5rem;
   padding: 1.5rem 0;
   text-align: left;
-  text-decoration: none;
-  box-shadow: none;
   background: #FCFAFB;
+  text-decoration: none !important;
+  box-shadow: none !important;
   border-radius: 3.125rem !important;
 }
 
