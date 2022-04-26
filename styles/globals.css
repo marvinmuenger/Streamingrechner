@@ -10,17 +10,6 @@ body {
   color: #2C2C2C;
 }
 
-.css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root{
-  font-family: Avenir;
-  border-radius: 0.75rem;
-  color: #2C2C2C;
-  width: 9rem;
-}
-
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
-  width: 12rem !important;
-}
-
 a {
   color: inherit;
   text-decoration: none;

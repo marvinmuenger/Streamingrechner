@@ -35,7 +35,7 @@ const connections = [
   'WLAN',
   '3G',
   '4G',
-  '5G',
+  '5G'
 ];
 
 const resolutions = [
@@ -45,34 +45,19 @@ const resolutions = [
 ];
 
 const countries = [
-  { code: 'CH', label: 'Schweiz' },
-  { code: 'DE', label: 'Deutschland' },
-  { code: 'FR', label: 'Frankreich' },
-  { code: 'IT', label: 'Italien' },
-  { code: 'ES', label: 'Spanien' },
-  { code: 'US', label: 'USA' },
-  { code: 'GB', label: 'Großbritannien' },
-  { code: 'AT', label: 'Österreich' },
-  { code: 'BE', label: 'Belgien' },
-  { code: 'DK', label: 'Dänemark' },
-  { code: 'FI', label: 'Finnland' },
-  { code: 'GR', label: 'Griechenland' },
-  { code: 'IE', label: 'Irland' },
-  { code: 'LU', label: 'Luxemburg' },
-  { code: 'NL', label: 'Niederlande' },
-  { code: 'NO', label: 'Norwegen' },
-  { code: 'SE', label: 'Schweden' },
-  { code: 'CZ', label: 'Tschechien' },
-  { code: 'PL', label: 'Polen' },
-  { code: 'SK', label: 'Slowakei' },
-  { code: 'SI', label: 'Slowenien' },
-  { code: 'HU', label: 'Ungarn' }
+  'Schweiz',
+  'Deutschland',
+  'Frankreich',
+  'Italien',
+  'Spanien',
+  'USA'
 ];
 
 export default function Home() {
   const [deviceName, setDeviceName] = React.useState([]);
   const [connection, setConnection] = React.useState([]);
   const [resolution, setResolution] = React.useState([]);
+  const [country, setCountry] = React.useState([]);
 
   const handleDeviceChange = (event) => {
     const {
@@ -104,6 +89,16 @@ export default function Home() {
     );
   };
 
+  const handleCountryChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setCountry(
+      // On autofill we get a stringified value.
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -111,22 +106,21 @@ export default function Home() {
   };
 
   return (
-    <div className={styles.container}>
-
+    <div>
       <h1 className={styles.title}>
         Streaming Energie- und CO2-Rechner
       </h1>
 
       <p className={styles.description}>
-
         Mit diesem Rechner können Sie die Energie- und CO2-Emissionen eines Streaming-Geräts berechnen.
       </p>
 
       <main className={styles.main}>
         <Card className={styles.card}>
             <div className={styles.wrapper}>
+            <div className={styles.container}>
             <div className={styles.inline}>
-              <FormControl sx={{ m: 1, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
+              <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
                 <InputLabel id="device-name-label">Gerät</InputLabel>
                 <Select
                   labelId="device-label"
@@ -148,7 +142,7 @@ export default function Home() {
                 </Select>
               </FormControl>
 
-              <FormControl sx={{ m: 1, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="resolution-name-label">Auflösung</InputLabel>
                 <Select
                   labelId="resolution-label"
@@ -169,10 +163,6 @@ export default function Home() {
                   ))}
                 </Select>
               </FormControl>
-
-              <p>
-                
-              </p>
             </div>
 
             <div className={styles.inline}>
@@ -198,36 +188,29 @@ export default function Home() {
                 </Select>
               </FormControl>
 
-              <Autocomplete
-                id="country-select"
-                sx={{  m: 1, mb: 2.5, ml: 1, mr: 1 }} 
-                size="small"
-                options={countries}
-                autoHighlight
-                getOptionLabel={(option) => option.label}
-                renderOption={(props, option) => (
-                  <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                    <img
-                      loading="lazy"
-                      width="20"
-                      src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                      srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                      alt=""
-                    />
-                    {option.label}
-                  </Box>
-                )}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Land"
-                    inputProps={{
-                      ...params.inputProps,
-                      autoComplete: 'new-password', // disable autocomplete and autofill
-                    }}
-                  />
-                )}
-              />
+              <FormControl sx={{ m: 1, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+                <InputLabel id="country-name-label">Land</InputLabel>
+                <Select
+                  labelId="country-label"
+                  id="country-name"
+                  value={country}
+                  onChange={handleCountryChange}
+                  input={<OutlinedInput label="Land" />}
+                  MenuProps={MenuProps}
+                  className={styles.select}
+                >
+                  {countries.map((country) => (
+                    <MenuItem
+                      key={country}
+                      value={country}
+                    >
+                      {country}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+
+            </div>
             </div>
           </div>
         </Card>

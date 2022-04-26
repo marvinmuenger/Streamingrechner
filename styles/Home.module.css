@@ -69,13 +69,21 @@
   border-radius: 50px;
 }
 
+.textcontainer {
+  text-align: left;
+}
+
 .inline {
   display: inline-flex;
 }
 
+.container {
+  max-width: 20rem;
+}
+
 .select {
   font-family: Avenir;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   color: #2C2C2C;
   width: 9rem;
 }
