@@ -90,6 +90,8 @@
   min-width: 9rem;
 }
 
+/* sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} */
+
 @media (max-width: 600px) {
   .wrapper {
     margin: 0;
@@ -103,5 +105,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    letter-spacing: 0em;
+  }
+
+  .description {
+    margin: 2.5rem 1.75rem;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    color: #465E69;
+  }
+
+  .select {
+    font-family: Avenir;
+    border-radius: 0.5rem !important;
+    color: #2C2C2C;
+    min-width: 16rem;
   }
 }

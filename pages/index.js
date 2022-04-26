@@ -11,6 +11,7 @@ import Select from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { Card } from '@mui/material';
 import { style } from '@mui/system';
+import Slider from '@mui/material/Slider';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -104,6 +105,10 @@ export default function Home() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  function valuetext(value) {
+    return `${value}h`;
+  }
 
   return (
     <div>
@@ -210,11 +215,26 @@ export default function Home() {
                 </Select>
               </FormControl>
             </div>
+
+            <div className={styles.inline}>
+              <Box sx={{ width: 520, m: 1.5 }}>
+                <Slider
+                  aria-label="Temperature"
+                  defaultValue={30}
+                  getAriaValueText={valuetext}
+                  valueLabelDisplay="auto"
+                  step={10}
+                  marks
+                  min={10}
+                  max={110}
+                />
+              </Box>
             </div>
           </div>
-        </Card>
-      </main>
-    </div>  
+        </div>
+      </Card>
+    </main>
+  </div>  
   )
 }
 
