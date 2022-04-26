@@ -166,7 +166,7 @@ export default function Home() {
             </div>
 
             <div className={styles.inline}>
-              <FormControl sx={{ m: 1, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="network-name-label">Netzwerk</InputLabel>
                 <Select
                   labelId="network-label"
@@ -188,7 +188,7 @@ export default function Home() {
                 </Select>
               </FormControl>
 
-              <FormControl sx={{ m: 1, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="country-name-label">Land</InputLabel>
                 <Select
                   labelId="country-label"
