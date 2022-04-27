@@ -10,6 +10,66 @@ import Grid from '@mui/material/Grid';
 import Slider from '@mui/material/Slider';
 import MuiInput from '@mui/material/Input';
 import NativeSelect from '@mui/material/NativeSelect';
+import Chart from 'chart.js/auto'
+import {Bar} from 'react-chartjs-2';
+
+const options = {
+  scales: {
+       xAxes: [{
+           stacked: true
+       }],
+       yAxes: [{
+           stacked: true
+       }]
+   },
+   maintainAspectRatio: false
+}
+
+const data = {
+  labels: ['Test 1', 'Test 2'],
+  datasets: [{
+    label: 'Rechenzentren',
+    data: [1, 1],
+    stack:"",
+    backgroundColor: [
+      '#C5E6F0',
+      '#C5E6F0'
+    ],
+    borderColor: [
+      '#C5E6F0',
+      '#C5E6F0'
+    ],
+    borderWidth: 1
+  }, 
+  {  
+    label: 'Kommunikationsnetze',
+    data: [2, 1],
+    stack:"",
+    backgroundColor: [
+      '#9288C8',
+      '#9288C8'
+    ],
+    borderColor: [
+      '#9288C8',
+      '#9288C8'
+    ],
+    borderWidth: 1
+  },
+  {
+    label: 'Geräte',
+    data: [1, 3.2],
+    stack:"",
+    backgroundColor: [
+      '#45D1B8',
+      '#45D1B8'
+    ],
+    borderColor: [
+      '#45D1B8',
+      '#45D1B8'
+    ],
+    borderWidth: 1
+  }]
+}
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -280,6 +340,20 @@ export default function Home() {
               </Box>
             </div>
           </div>
+        </div>
+      </Card>
+
+      <a className={styles.text} style={{ marginTop: '2rem' }}>
+          Resultat
+      </a>
+      <Card className={styles.card}>
+        <div className={styles.chart} style={{height: '16rem'}}>
+          <Bar
+            data={data}
+            width={10}
+            height={2}
+            options={options}
+          />
         </div>
       </Card>
     </main>

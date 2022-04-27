@@ -6,6 +6,10 @@
   padding: 3rem 0;
 }
 
+.chart {
+  padding: 2rem;
+}
+
 .wrapper {
   margin: 0 1.5rem;
   justify-content: center;
