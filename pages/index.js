@@ -189,7 +189,7 @@ export default function Home() {
                   Finde heraus, wieviel CO2 du beim Videostreamen verursachst
                 </a>
                 <p className={styles.paragraph}>
-                    Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung abhängig.
+                    Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
                 </p>
               </div>
             </div>
