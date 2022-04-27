@@ -2,17 +2,13 @@
 import * as React from 'react';
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { Card } from '@mui/material';
-import { style } from '@mui/system';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import MuiInput from '@mui/material/Input';
 
@@ -128,13 +124,18 @@ export default function Home() {
       </h1>
 
       <p className={styles.description}>
-        Mit diesem Rechner können Sie die Energie- und CO2-Emissionen eines Streaming-Geräts berechnen.
+        Mit diesem Rechner können Sie den Energieverbrauch und die CO2-Emissionen von Videostreaming berechnen.
       </p>
 
       <main className={styles.main}>
         <Card className={styles.card}>
             <div className={styles.wrapper}>
             <div className={styles.container}>
+              <div className={styles.smalltext}>
+                <a className={styles.text}>
+                    Finden Sie heraus, wieviel CO2 Sie beim Videostreamen verursachen
+                </a>
+              </div>
             <div className={styles.inline}>
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
                 <InputLabel id="device-name-label">Gerät</InputLabel>
@@ -179,6 +180,15 @@ export default function Home() {
                   ))}
                 </Select>
               </FormControl>
+
+              <div className={styles.textcontainer}>
+                <a className={styles.text}>
+                  Finden Sie heraus, wieviel CO2 Sie beim Videostreamen verursachen
+                </a>
+                <p className={styles.paragraph}>
+                  Sint laborum id id excepteur adipisicing non ut Lorem ea irure mollit. Magna ad velit deserunt esse cillum aute cupidatat proident minim labore nisi cupidatat commodo consequat ex. Eiusmod reprehenderit eu minim occaecat ullamco sint Lorem ipsum laborum ut reprehenderit. Non Lorem qui qui ullamco et ipsum nisi reprehenderit consequat voluptate aliquip. Esse consectetur magna consequat veniam incididunt amet incididunt consequat. Pariatur incididunt cupidatat eiusmod voluptate sunt cupidatat fugiat cillum incididunt dolor esse quis aute aute dolore. Ullamco laboris proident velit deserunt ullamco. Velit incididunt anim magna minim fugiat aliquip ipsum. Laboris sit esse anim dolore eu. Magna excepteur pariatur non voluptate nisi eiusmod laborum commodo duis laborum magna aliqua id.
+                </p>
+              </div>
             </div>
 
             <div className={styles.inline}>
