@@ -20,7 +20,7 @@
 }
 
 .text {
-  font-size: 1.1rem;
+  font-size: 2.2vw;
   font-weight: bold;
   color: #2C2C2C;
 }
@@ -30,12 +30,12 @@
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 1.6vw;
   line-height: 2;
   color: #4B5D68;
-  height: 6rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 8.5rem;
 }
 
 .main {
@@ -183,6 +183,16 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .text {
+    font-size: 1.375rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 1200px) {
   .smalltext {
     display: none;
@@ -221,25 +231,6 @@
     color: rgba(0, 0, 0, 0.6);
     font-weight: 400;
     margin-bottom: 0.5rem;
-  }
-
-  .text {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #2C2C2C;
-  }
-  
-  .paragraph {
-    margin-top: 1rem;
-    font-family: 'Avenir';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 2;
-    color: #4B5D68;
-    height: 6rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .textcontainer {

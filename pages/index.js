@@ -124,7 +124,7 @@ export default function Home() {
       </h1>
 
       <p className={styles.description}>
-        Mit diesem Rechner können Sie den Energieverbrauch und die CO2-Emissionen von Videostreaming berechnen.
+        Mit diesem Rechner kannst du den Energieverbrauch und die CO2-Emissionen eines Video-Streams berechnen.
       </p>
 
       <main className={styles.main}>
@@ -133,7 +133,7 @@ export default function Home() {
             <div className={styles.container}>
               <div className={styles.smalltext}>
                 <a className={styles.text}>
-                    Finden Sie heraus, wieviel CO2 Sie beim Videostreamen verursachen
+                    Finde heraus, wieviel CO2 du beim Videostreamen verursachst
                 </a>
               </div>
             <div className={styles.inline}>
@@ -183,10 +183,10 @@ export default function Home() {
 
               <div className={styles.textcontainer}>
                 <a className={styles.text}>
-                  Finden Sie heraus, wieviel CO2 Sie beim Videostreamen verursachen
+                  Finde heraus, wieviel CO2 du beim Videostreamen verursachst
                 </a>
                 <p className={styles.paragraph}>
-                  Sint laborum id id excepteur adipisicing non ut Lorem ea irure mollit. Magna ad velit deserunt esse cillum aute cupidatat proident minim labore nisi cupidatat commodo consequat ex. Eiusmod reprehenderit eu minim occaecat ullamco sint Lorem ipsum laborum ut reprehenderit. Non Lorem qui qui ullamco et ipsum nisi reprehenderit consequat voluptate aliquip. Esse consectetur magna consequat veniam incididunt amet incididunt consequat. Pariatur incididunt cupidatat eiusmod voluptate sunt cupidatat fugiat cillum incididunt dolor esse quis aute aute dolore. Ullamco laboris proident velit deserunt ullamco. Velit incididunt anim magna minim fugiat aliquip ipsum. Laboris sit esse anim dolore eu. Magna excepteur pariatur non voluptate nisi eiusmod laborum commodo duis laborum magna aliqua id.
+                    Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung abhängig.
                 </p>
               </div>
             </div>
