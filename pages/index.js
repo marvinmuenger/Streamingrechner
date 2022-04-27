@@ -11,7 +11,10 @@ import Select from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { Card } from '@mui/material';
 import { style } from '@mui/system';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
+import MuiInput from '@mui/material/Input';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -106,9 +109,46 @@ export default function Home() {
     setValue(newValue);
   };
 
+  const marks = [
+    {
+      value: 0,
+      label: '0h',
+    },
+    {
+      value: 6,
+      label: '6h',
+    },
+    {
+      value: 12,
+      label: '12h',
+    },
+    {
+      value: 24,
+      label: '24h',
+    },
+  ];
+
   function valuetext(value) {
     return `${value}h`;
   }
+
+  const [duration, setDuration] = React.useState(30);
+
+  const handleSliderChange = (event, newDuration) => {
+    setDuration(newDuration);
+  };
+
+  const handleInputChange = (event) => {
+    setDuration(event.target.value === '' ? '' : Number(event.target.value));
+  };
+
+  const handleBlur = () => {
+    if (duration < 0) {
+      setDuration(0);
+    } else if (duration > 100) {
+      setDuration(100);
+    }
+  };
 
   return (
     <div>
@@ -217,17 +257,53 @@ export default function Home() {
             </div>
 
             <div className={styles.inline}>
-              <Box sx={{ width: 520, m: 1.5 }}>
+              {/* <Box sx={{ m: 1.5 }} className={styles.slider}>
                 <Slider
-                  aria-label="Temperature"
-                  defaultValue={30}
+                  className={styles.slider}
+                  aria-label="Dauer"
+                  defaultValue={2}
+                  max={24}
                   getAriaValueText={valuetext}
                   valueLabelDisplay="auto"
-                  step={10}
-                  marks
-                  min={10}
-                  max={110}
+                  step={0.1}
                 />
+              </Box> */}
+              <Box sx={{ m: 1.5 }} className={styles.slider}>
+                <a id="input-slider" gutterBottom className={styles.label}>
+                  Dauer
+                </a>
+                <Grid container alignItems="center">
+                  <Grid item>
+                  </Grid>
+                  <Grid item xs>
+                    <Slider
+                      className={styles.slidercolor}
+                      value={typeof duration === 'number' ? duration : 0}
+                      onChange={handleSliderChange}
+                      aria-labelledby="input-slider"
+                      defaultValue={2}
+                      step={0.1}
+                      max={24}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <MuiInput
+                      className={styles.input}
+                      sx={{ ml: 1.5 }}
+                      value={duration}
+                      size="small"
+                      onChange={handleInputChange}
+                      onBlur={handleBlur}
+                      inputProps={{
+                        step: 0.5,
+                        min: 0,
+                        max: 24,
+                        type: 'number',
+                        'aria-labelledby': 'input-slider',
+                      }}
+                    />
+                  </Grid>
+                </Grid>
               </Box>
             </div>
           </div>
