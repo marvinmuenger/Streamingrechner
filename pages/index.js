@@ -351,7 +351,7 @@ export default function Home() {
               </Box>
             </div>
             <ThemeProvider theme={theme}>
-              <Button color="neutral" variant="contained" disableElevation style={{ marginLeft: '0.75rem', marginTop: '1.5rem', borderRadius: '0.5rem'}}>
+              <Button color="neutral" variant="contained" disableElevation style={{ marginLeft: '0.75rem', marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem'}}>
                 Resultat
               </Button>
             </ThemeProvider>
