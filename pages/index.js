@@ -11,6 +11,7 @@ import { Card } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Slider from '@mui/material/Slider';
 import MuiInput from '@mui/material/Input';
+import NativeSelect from '@mui/material/NativeSelect';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -139,7 +140,8 @@ export default function Home() {
             <div className={styles.inline}>
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
                 <InputLabel id="device-name-label">Gerät</InputLabel>
-                <Select
+                <NativeSelect
+                  defaultValue={1}
                   labelId="device-label"
                   id="device-name"
                   value={deviceName}
@@ -149,14 +151,14 @@ export default function Home() {
                   className={styles.select}
                 >
                   {devices.map((name) => (
-                    <MenuItem
+                    <option
                       key={name}
                       value={name}
                     >
                       {name}
-                    </MenuItem>
+                    </option>
                   ))}
-                </Select>
+                </NativeSelect>
               </FormControl>
 
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
