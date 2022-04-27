@@ -3,9 +3,7 @@ import * as React from 'react';
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { Card } from '@mui/material';
 import Grid from '@mui/material/Grid';
@@ -119,7 +117,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className={styles.site}>
       <h1 className={styles.title}>
         Streaming Energie- und CO2-Rechner
       </h1>

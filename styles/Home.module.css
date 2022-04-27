@@ -1,3 +1,7 @@
+.site {
+  padding: 2rem;
+}
+
 .container {
   padding: 3rem 0;
 }
@@ -10,8 +14,8 @@
 .textcontainer {
   position: absolute;
   flex-direction: column;
-  margin: 0.95rem 22rem;
-  margin-right: 2rem;
+  margin: 0.95rem 20.2rem;
+  margin-right: 3.2rem;
   padding: 0 1.5rem;
 }
 
@@ -35,7 +39,7 @@
   color: #4B5D68;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 8.5rem;
+  height: 9rem;
 }
 
 .main {
@@ -148,7 +152,11 @@
   color: #70CEB9 !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+  .site {
+    padding: 0.5rem;
+  }
+
   .container {
     padding: 1rem 0;
   }
@@ -238,8 +246,8 @@
   .textcontainer {
     position: absolute;
     flex-direction: column;
-    margin: 0.85rem 37rem;
-    margin-right: 2rem;
+    margin: 0.9rem 35rem;
+    margin-right: 4rem;
     padding: 0 1.5rem;
   }
 }
