@@ -103,36 +103,7 @@ export default function Home() {
     );
   };
 
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const marks = [
-    {
-      value: 0,
-      label: '0h',
-    },
-    {
-      value: 6,
-      label: '6h',
-    },
-    {
-      value: 12,
-      label: '12h',
-    },
-    {
-      value: 24,
-      label: '24h',
-    },
-  ];
-
-  function valuetext(value) {
-    return `${value}h`;
-  }
-
-  const [duration, setDuration] = React.useState(30);
+  const [duration, setDuration] = React.useState(2);
 
   const handleSliderChange = (event, newDuration) => {
     setDuration(newDuration);
@@ -257,20 +228,9 @@ export default function Home() {
             </div>
 
             <div className={styles.inline}>
-              {/* <Box sx={{ m: 1.5 }} className={styles.slider}>
-                <Slider
-                  className={styles.slider}
-                  aria-label="Dauer"
-                  defaultValue={2}
-                  max={24}
-                  getAriaValueText={valuetext}
-                  valueLabelDisplay="auto"
-                  step={0.1}
-                />
-              </Box> */}
               <Box sx={{ m: 1.5 }} className={styles.slider}>
                 <a id="input-slider" gutterBottom className={styles.label}>
-                  Dauer
+                  Dauer (Stunden)
                 </a>
                 <Grid container alignItems="center">
                   <Grid item>
@@ -281,7 +241,7 @@ export default function Home() {
                       value={typeof duration === 'number' ? duration : 0}
                       onChange={handleSliderChange}
                       aria-labelledby="input-slider"
-                      defaultValue={2}
+                      defaultValue={1}
                       step={0.1}
                       max={24}
                     />
