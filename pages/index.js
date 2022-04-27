@@ -12,6 +12,17 @@ import MuiInput from '@mui/material/Input';
 import NativeSelect from '@mui/material/NativeSelect';
 import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    neutral: {
+      main: '#70CEB9',
+      contrastText: '#fff',
+    },
+  },
+});
 
 const options = {
   scales: {
@@ -339,6 +350,11 @@ export default function Home() {
                 </Grid>
               </Box>
             </div>
+            <ThemeProvider theme={theme}>
+              <Button color="neutral" variant="contained" disableElevation style={{ marginLeft: '0.75rem', marginTop: '1.5rem', borderRadius: '0.5rem'}}>
+                Resultat
+              </Button>
+            </ThemeProvider>
           </div>
         </div>
       </Card>
