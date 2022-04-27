@@ -25,7 +25,7 @@ const MenuProps = {
 };
 
 const devices = [
-  'Fernsehgerät',
+  'TV',
   'Desktop Computer',
   'Notebook',
   'Tablet',
@@ -163,7 +163,8 @@ export default function Home() {
 
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="resolution-name-label">Auflösung</InputLabel>
-                <Select
+                <NativeSelect
+                  defaultValue={1}
                   labelId="resolution-label"
                   id="device-name"
                   value={resolution}
@@ -173,14 +174,14 @@ export default function Home() {
                   className={styles.select}
                 >
                   {resolutions.map((resolution) => (
-                    <MenuItem
+                    <option
                       key={resolution}
                       value={resolution}
                     >
                       {resolution}
-                    </MenuItem>
+                    </option>
                   ))}
-                </Select>
+                </NativeSelect>
               </FormControl>
 
               <div className={styles.textcontainer}>
@@ -196,7 +197,8 @@ export default function Home() {
             <div className={styles.inline}>
               <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="network-name-label">Netzwerk</InputLabel>
-                <Select
+                <NativeSelect
+                  defaultValue={1}
                   labelId="network-label"
                   id="network-name"
                   value={connection}
@@ -206,19 +208,20 @@ export default function Home() {
                   className={styles.select}
                 >
                   {connections.map((connection) => (
-                    <MenuItem
+                    <option
                       key={connection}
                       value={connection}
                     >
                       {connection}
-                    </MenuItem>
+                    </option>
                   ))}
-                </Select>
+                </NativeSelect>
               </FormControl>
 
               <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="country-name-label">Land</InputLabel>
-                <Select
+                <NativeSelect
+                  defaultValue={1}
                   labelId="country-label"
                   id="country-name"
                   value={country}
@@ -228,14 +231,14 @@ export default function Home() {
                   className={styles.select}
                 >
                   {countries.map((country) => (
-                    <MenuItem
+                    <option
                       key={country}
                       value={country}
                     >
                       {country}
-                    </MenuItem>
+                    </option>
                   ))}
-                </Select>
+                </NativeSelect>
               </FormControl>
             </div>
 
