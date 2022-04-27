@@ -141,7 +141,6 @@ export default function Home() {
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
                 <InputLabel id="device-name-label">Gerät</InputLabel>
                 <NativeSelect
-                  defaultValue={1}
                   labelId="device-label"
                   id="device-name"
                   value={deviceName}
@@ -150,6 +149,7 @@ export default function Home() {
                   MenuProps={MenuProps}
                   className={styles.select}
                 >
+                  <option hidden selected></option>
                   {devices.map((name) => (
                     <option
                       key={name}
@@ -164,7 +164,6 @@ export default function Home() {
               <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="resolution-name-label">Auflösung</InputLabel>
                 <NativeSelect
-                  defaultValue={1}
                   labelId="resolution-label"
                   id="device-name"
                   value={resolution}
@@ -173,6 +172,7 @@ export default function Home() {
                   MenuProps={MenuProps}
                   className={styles.select}
                 >
+                  <option hidden selected></option>
                   {resolutions.map((resolution) => (
                     <option
                       key={resolution}
@@ -198,7 +198,6 @@ export default function Home() {
               <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="network-name-label">Netzwerk</InputLabel>
                 <NativeSelect
-                  defaultValue={1}
                   labelId="network-label"
                   id="network-name"
                   value={connection}
@@ -207,6 +206,7 @@ export default function Home() {
                   MenuProps={MenuProps}
                   className={styles.select}
                 >
+                  <option hidden selected></option>
                   {connections.map((connection) => (
                     <option
                       key={connection}
@@ -221,7 +221,6 @@ export default function Home() {
               <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
                 <InputLabel id="country-name-label">Land</InputLabel>
                 <NativeSelect
-                  defaultValue={1}
                   labelId="country-label"
                   id="country-name"
                   value={country}
@@ -230,6 +229,7 @@ export default function Home() {
                   MenuProps={MenuProps}
                   className={styles.select}
                 >
+                  <option hidden selected></option>
                   {countries.map((country) => (
                     <option
                       key={country}
