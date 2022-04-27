@@ -155,13 +155,11 @@
 
   .smalltext {
     display: block;
-    margin-left: 0.75rem;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0.75rem;
   }
 
   .text {
-    font-size: 1rem;
-    margin: 1.5rem 0;
+    font-size: 1.1rem;
   }
 
   .wrapper {
