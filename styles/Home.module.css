@@ -1,5 +1,5 @@
 .site {
-  padding: 4rem;
+  padding: 3.5rem 4rem;
   max-width: 100rem;
   margin: 0 auto;
 }
@@ -172,7 +172,7 @@
 
 @media (max-width: 750px) {
   .site {
-    padding: calc(18vw - 4.5rem);
+    padding: calc(20vw - 5rem);
   }
 
   .container {
