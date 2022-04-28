@@ -1,5 +1,7 @@
 .site {
   padding: 4rem;
+  max-width: 100rem;
+  margin: 0 auto;
 }
 
 .container {
@@ -32,6 +34,7 @@
   margin: 0.95rem 20.2rem;
   margin-right: 5rem;
   padding: 0 1.5rem;
+  max-width: 40rem;
 }
 
 .smalltext {
@@ -217,7 +220,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .site {
     padding: 4rem 10rem;
   }
