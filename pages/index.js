@@ -83,7 +83,7 @@ const data = {
   }]
 }
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
+const scrollToRef = (ref) => window.scrollTo({left: 0, top: ref.current.offsetTop, behavior: 'smooth'});   
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -384,6 +384,6 @@ export default function Home() {
       </Card>
     </main>
   </div>  
-  )
+  );
 }
 

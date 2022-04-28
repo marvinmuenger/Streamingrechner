@@ -1,5 +1,6 @@
 .site {
   padding: 4rem;
+  height: 1000rem;
 }
 
 .container {
@@ -20,12 +21,10 @@
 }
 
 .button {
-  margin-left: 0.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 0.5rem;
-  /* width: 9rem;
-  height: 2.5rem; */
+  margin-left: 0.5rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  border-radius: 0.5rem !important;
 }
 
 .textcontainer {
