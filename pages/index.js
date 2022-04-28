@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
+import { useRef } from 'react';
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -81,6 +82,8 @@ const data = {
     borderWidth: 1
   }]
 }
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -186,6 +189,9 @@ export default function Home() {
       setDuration(100);
     }
   };
+
+  const myRef = useRef(null)
+  const executeScroll = () => scrollToRef(myRef)
 
   return (
     <div className={styles.site}>
@@ -351,19 +357,23 @@ export default function Home() {
               </Box>
             </div>
             <ThemeProvider theme={theme}>
-              <Button color="neutral" variant="contained" disableElevation style={{ marginLeft: '0.75rem', marginTop: '1.5rem', marginBottom: '1.5rem', borderRadius: '0.5rem'}}>
-                Resultat
+              <Button
+                onClick={executeScroll}
+                className={styles.button} 
+                color="neutral" 
+                variant="contained" >
+                Ausrechnen
               </Button>
             </ThemeProvider>
           </div>
         </div>
       </Card>
 
-      <a className={styles.text} style={{ marginTop: '2rem' }}>
+      <a ref={myRef} className={styles.text} style={{ marginTop: '2rem' }} id="result">
           Resultat
       </a>
       <Card className={styles.card}>
-        <div className={styles.chart} style={{height: '16rem'}}>
+        <div className={styles.chart}>
           <Bar
             data={data}
             width={10}

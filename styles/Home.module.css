@@ -1,5 +1,5 @@
 .site {
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .container {
@@ -8,6 +8,10 @@
 
 .chart {
   padding: 2rem;
+  height: -moz-calc(10vw + 12rem);
+  height: -webkit-calc(10vw + 12rem);
+  height: -o-calc(10vw + 12rem);
+  height: calc(10vw + 12rem);
 }
 
 .wrapper {
@@ -15,11 +19,20 @@
   justify-content: center;
 }
 
+.button {
+  margin-left: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  /* width: 9rem;
+  height: 2.5rem; */
+}
+
 .textcontainer {
   position: absolute;
   flex-direction: column;
   margin: 0.95rem 20.2rem;
-  margin-right: 3.2rem;
+  margin-right: 5rem;
   padding: 0 1.5rem;
 }
 
@@ -43,7 +56,6 @@
   color: #4B5D68;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 9rem;
 }
 
 .main {
@@ -156,9 +168,9 @@
   color: #70CEB9 !important;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .site {
-    padding: 0.5rem;
+    padding: calc(18vw - 5rem);
   }
 
   .container {
@@ -208,6 +220,10 @@
 }
 
 @media (min-width: 1200px) {
+  .site {
+    padding: 4rem 10rem;
+  }
+
   .smalltext {
     display: none;
   }
@@ -251,7 +267,7 @@
     position: absolute;
     flex-direction: column;
     margin: 0.9rem 35rem;
-    margin-right: 4rem;
+    margin-right: 11.5rem;
     padding: 0 1.5rem;
   }
 }
