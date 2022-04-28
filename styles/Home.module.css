@@ -32,7 +32,7 @@
   position: absolute;
   flex-direction: column;
   margin: 0.95rem 20.2rem;
-  margin-right: 5rem;
+  margin-right: 5.5rem;
   padding: 0 1.5rem;
   max-width: 40rem;
 }
@@ -57,6 +57,7 @@
   color: #4B5D68;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: justify;
 }
 
 .main {
@@ -169,9 +170,9 @@
   color: #70CEB9 !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .site {
-    padding: calc(18vw - 5rem);
+    padding: calc(18vw - 4.5rem);
   }
 
   .container {
@@ -268,7 +269,7 @@
     position: absolute;
     flex-direction: column;
     margin: 0.9rem 35rem;
-    margin-right: 11.5rem;
+    margin-right: 12rem;
     padding: 0 1.5rem;
   }
 }
