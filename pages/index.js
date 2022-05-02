@@ -15,6 +15,7 @@ import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { style } from '@mui/system';
 
 const theme = createTheme({
   palette: {
@@ -199,21 +200,24 @@ export default function Home() {
         Streaming Energie- und CO2-Rechner
       </h1>
 
-      <p className={styles.description}>
+      <h2>
         Mit diesem Rechner kannst du den Energieverbrauch und die CO2-Emissionen eines Video-Streams berechnen.
-      </p>
+      </h2>
 
-      <main className={styles.main}>
-        <Card className={styles.card}>
-            <div className={styles.wrapper}>
-            <div className={styles.container}>
-              <div className={styles.smalltext}>
-                <a className={styles.text}>
-                    Finde heraus, wieviel CO2 du beim Videostreamen verursachst
-                </a>
-              </div>
-            <div className={styles.inline}>
-              <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left' }} size="small">
+      <main>
+        <card className={styles.settings}>
+          <div className={styles.cardText}>
+              <h3>
+                Finde heraus, wieviel CO2 du beim Videostreamen verursachst
+              </h3>
+              <p className={styles.paragraph}>
+                Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
+              </p>
+          </div>
+          <div className={styles.controls}>
+            <div style={{display: 'grid', gridTemplateRows: 'repeat(2, 1fr)'}}>
+            <div style={{display:'grid', gap: '2rem', width: 'inherit', gridTemplateColumns: 'repeat(2, 1fr)'}}>
+              <FormControl className={styles.select}>
                 <InputLabel id="device-name-label">Gerät</InputLabel>
                 <NativeSelect
                   labelId="device-label"
@@ -222,7 +226,6 @@ export default function Home() {
                   onChange={handleDeviceChange}
                   input={<OutlinedInput label="Device" />}
                   MenuProps={MenuProps}
-                  className={styles.select}
                 >
                   <option hidden selected></option>
                   {devices.map((name) => (
@@ -236,7 +239,7 @@ export default function Home() {
                 </NativeSelect>
               </FormControl>
 
-              <FormControl sx={{ mt: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl className={styles.select}>
                 <InputLabel id="resolution-name-label">Auflösung</InputLabel>
                 <NativeSelect
                   labelId="resolution-label"
@@ -245,7 +248,6 @@ export default function Home() {
                   onChange={handleResolutionChange}
                   input={<OutlinedInput label="Resolution" />}
                   MenuProps={MenuProps}
-                  className={styles.select}
                 >
                   <option hidden selected></option>
                   {resolutions.map((resolution) => (
@@ -259,18 +261,7 @@ export default function Home() {
                 </NativeSelect>
               </FormControl>
 
-              <div className={styles.textcontainer}>
-                <a className={styles.text}>
-                  Finde heraus, wieviel CO2 du beim Videostreamen verursachst
-                </a>
-                <p className={styles.paragraph}>
-                    Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.inline}>
-              <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl className={styles.select}>
                 <InputLabel id="network-name-label">Netzwerk</InputLabel>
                 <NativeSelect
                   labelId="network-label"
@@ -279,7 +270,6 @@ export default function Home() {
                   onChange={handleNetworkChange}
                   input={<OutlinedInput label="Connection" />}
                   MenuProps={MenuProps}
-                  className={styles.select}
                 >
                   <option hidden selected></option>
                   {connections.map((connection) => (
@@ -293,7 +283,7 @@ export default function Home() {
                 </NativeSelect>
               </FormControl>
 
-              <FormControl sx={{ m: 2.5, mb: 2.5, ml: 1, mr: 1, textAlign: 'left'  }} size="small">
+              <FormControl className={styles.select}>
                 <InputLabel id="country-name-label">Land</InputLabel>
                 <NativeSelect
                   labelId="country-label"
@@ -302,7 +292,6 @@ export default function Home() {
                   onChange={handleCountryChange}
                   input={<OutlinedInput label="Land" />}
                   MenuProps={MenuProps}
-                  className={styles.select}
                 >
                   <option hidden selected></option>
                   {countries.map((country) => (
@@ -317,14 +306,12 @@ export default function Home() {
               </FormControl>
             </div>
 
-            <div className={styles.inline}>
-              <Box sx={{ m: 1.5 }} className={styles.slider}>
+            <div style={{display:'grid', gridTemplateColumns: '1fr', alignItems: 'center'}}>
+              <Box>
                 <a id="input-slider" gutterBottom className={styles.label}>
                   Dauer (Stunden)
                 </a>
-                <Grid container alignItems="center">
-                  <Grid item>
-                  </Grid>
+                <Grid container alignItems="center" justifyContent="center">
                   <Grid item xs>
                     <Slider
                       className={styles.slidercolor}
@@ -356,23 +343,26 @@ export default function Home() {
                 </Grid>
               </Box>
             </div>
-            <ThemeProvider theme={theme}>
-              <Button
-                onClick={executeScroll}
-                className={styles.button} 
-                color="neutral" 
-                variant="contained" >
-                Ausrechnen
-              </Button>
-            </ThemeProvider>
+
+            <div>
+              <ThemeProvider theme={theme}>
+                <Button
+                  onClick={executeScroll}
+                  color="neutral" 
+                  variant="contained" >
+                  Ausrechnen
+                </Button>
+              </ThemeProvider>
+            </div>
           </div>
         </div>
-      </Card>
+      </card>
 
-      <a ref={myRef} className={styles.text} style={{ marginTop: '2rem' }} id="result">
+      <h3 ref={myRef} id="result" style={{textAlign: 'center'}}>
           Resultat
-      </a>
-      <Card className={styles.card}>
+      </h3>
+
+      <card className={styles.chartcontainer}>
         <div className={styles.chart}>
           <Bar
             data={data}
@@ -381,7 +371,7 @@ export default function Home() {
             options={options}
           />
         </div>
-      </Card>
+      </card>
     </main>
   </div>  
   );

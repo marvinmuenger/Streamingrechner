@@ -1,11 +1,12 @@
 .site {
-  padding: 3.5rem 4rem;
+  padding: 2.5rem 5rem;
+  margin: auto;
   max-width: 100rem;
-  margin: 0 auto;
 }
 
-.container {
-  padding: 3rem 0;
+.chartcontainer {
+  display: block;
+  padding: 2rem 1rem;
 }
 
 .chart {
@@ -16,90 +17,26 @@
   height: calc(10vw + 12rem);
 }
 
-.wrapper {
-  margin: 0 1.5rem;
+.cardText {
+  grid-column: 2;
+  padding: 1.2rem;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.controls {
+  grid-column: 1;
+  padding: 1.5rem;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0;
   justify-content: center;
-}
-
-.button {
-  margin-left: 0.5rem !important;
-  margin-top: 1.5rem !important;
-  margin-bottom: 1.5rem !important;
-  border-radius: 0.5rem !important;
-}
-
-.textcontainer {
-  position: absolute;
-  flex-direction: column;
-  margin: 0.95rem 20.2rem;
-  margin-right: 5.5rem;
-  padding: 0 1.5rem;
-  max-width: 40rem;
-}
-
-.smalltext {
-  display: none;
-}
-
-.text {
-  font-size: 2.2vw;
-  font-weight: bold;
-  color: #2C2C2C;
-}
-
-.paragraph {
-  margin-top: 1rem;
-  font-family: 'Avenir';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.6vw;
-  line-height: 2;
-  color: #4B5D68;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: justify;
-}
-
-.main {
-  min-height: 50vh;
-  padding: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-  margin-bottom: 1rem;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 1.5rem;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 2.5rem;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.title,
-.description {
-  text-align: left;
-}
-
-.description {
-  margin: 2rem 1.5rem;
-  line-height: 1.5;
-  font-size: 1rem;
-  color: #465E69;
+  align-content: center;
+  padding: 3rem 1.5rem;
 }
 
 .grid {
@@ -108,39 +45,6 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-}
-
-.card {
-  width: -moz-calc(100% - 2rem);
-  width: -webkit-calc(100% - 2rem);
-  width: -o-calc(100% - 2rem);
-  width: calc(100% - 2rem);
-  margin: 1.5rem;
-  padding: 1.5rem 0;
-  text-align: left;
-  background: #FCFAFB;
-  text-decoration: none !important;
-  box-shadow: none !important;
-  border-radius: 3.125rem !important;
-}
-
-.textcontainer {
-  text-align: left;
-}
-
-.inline {
-  display: inline-flex;
-}
-
-.container {
-  max-width: 20rem;
-}
-
-.select {
-  font-family: Avenir;
-  border-radius: 0.5rem !important;
-  color: #2C2C2C;
-  width: 9rem;
 }
 
 .input {
@@ -162,114 +66,43 @@
   margin-bottom: 0.5rem;
 }
 
-.slider {
-  width: 18.3rem;
+.select {
+  min-width: 10rem;
 }
 
 .slidercolor {
   color: #70CEB9 !important;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
+  .select {
+    min-width: unset;
+  }
+
   .site {
-    padding: calc(20vw - 5rem);
-  }
-
-  .container {
-    padding: 1rem 0;
-  }
-
-  .smalltext {
-    display: block;
-    margin: 1.5rem 0.75rem;
-  }
-
-  .text {
-    font-size: 1.1rem;
-  }
-
-  .wrapper {
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .inline {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .slider {
-    width: calc(100vw - 5rem);
-  }
-
-  .textcontainer {
-    display: none;
-  }
-}
-
-@media (min-width: 1000px) {
-  .text {
-    font-size: 1.375rem;
-  }
-
-  .paragraph {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1300px) {
-  .site {
-    padding: 4rem 10rem;
-  }
-
-  .smalltext {
-    display: none;
+    padding: 1rem max(20vw - 5rem, 1.5rem);
   }
 
   .title {
-    font-size: 2.5rem;
-    line-height: 3.5rem;
-    letter-spacing: 0em;
+    font-size: 2rem;
   }
 
-  .description {
-    margin: 2.5rem 1.75rem;
-    line-height: 1.5;
-    font-size: 1.25rem;
-    color: #465E69;
+  .paragraph {
+    display: none;
   }
 
-  .select {
-    font-family: Avenir;
-    border-radius: 0.5rem !important;
-    color: #2C2C2C;
-    width: 16rem;
-    margin-bottom: 1.5rem;
+  .settings {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 2rem 1rem;
   }
 
-  .slider {
-    width: 32.5rem;
-  }
-  
-  .label {
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
-    font-size: 1rem;
-    line-height: 1.4375rem;
-    letter-spacing: 0.009368rem;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+  .cardText {
+    display: block;
   }
 
-  .textcontainer {
-    position: absolute;
-    flex-direction: column;
-    margin: 0.9rem 35rem;
-    margin-right: 12rem;
-    padding: 0 1.5rem;
+  .controls {
+    grid-column: 2;
   }
+
 }
