@@ -43,6 +43,7 @@ card {
   background-color: white;
   border-radius: 3.125rem;
   margin: 2rem 0;
+  padding: min(4vw, 4rem);
 }
 
 * {
