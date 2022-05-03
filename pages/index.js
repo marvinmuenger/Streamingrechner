@@ -12,18 +12,7 @@ import MuiInput from '@mui/material/Input';
 import NativeSelect from '@mui/material/NativeSelect';
 import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
-import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { style } from '@mui/system';
-
-const theme = createTheme({
-  palette: {
-    neutral: {
-      main: '#70CEB9',
-      contrastText: '#fff',
-    },
-  },
-});
+import MuiButton from '@mui/material/Button';
 
 const options = {
   scales: {
@@ -214,8 +203,8 @@ export default function Home() {
               </p>
           </div>
           <div className={styles.controls}>
-            <div style={{display: 'grid', gridTemplateRows: 'repeat(2, 1fr)'}}>
-            <div style={{display:'grid', gap: '2rem', width: 'inherit', gridTemplateColumns: 'repeat(2, 1fr)'}}>
+            <div className={styles.cardWrapper}>
+            <div className={styles.selectContainer}>
               <FormControl className={styles.select}>
                 <InputLabel id="device-name-label">Gerät</InputLabel>
                 <NativeSelect
@@ -313,7 +302,6 @@ export default function Home() {
                 <Grid container alignItems="center" justifyContent="center">
                   <Grid item xs>
                     <Slider
-                      className={styles.slidercolor}
                       value={typeof duration === 'number' ? duration : 0}
                       onChange={handleSliderChange}
                       aria-labelledby="input-slider"
@@ -344,14 +332,11 @@ export default function Home() {
             </div>
 
             <div>
-              <ThemeProvider theme={theme}>
-                <Button
-                  onClick={executeScroll}
-                  color="neutral" 
-                  variant="contained" >
-                  Ausrechnen
-                </Button>
-              </ThemeProvider>
+              <MuiButton
+                onClick={executeScroll}
+                variant="contained" >
+                Ausrechnen
+              </MuiButton>
             </div>
           </div>
         </div>
@@ -371,7 +356,11 @@ export default function Home() {
           />
         </div>
       </card>
+
       <card className={styles.resultContainer}>
+        <div className={styles.test}>
+          test
+        </div>
         <card className={styles.resultRechenzentrenContainer}>
           <card className={styles.resultTextContainer}>
           </card>

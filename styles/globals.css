@@ -46,6 +46,11 @@ card {
   padding: min(4vw, 4rem);
 }
 
+button {
+  height: 2.75rem !important;
+  color: #fff !important;
+}
+
 * {
   box-sizing: border-box;
 }
