@@ -136,6 +136,12 @@
     gap: 0;
   }
 
+  .chart {
+    max-width: 33rem;
+    padding: 1rem 0;
+    margin: auto;
+  }
+
   .selectContainer {
     gap: max(1rem, 4vw);
   }
@@ -173,6 +179,7 @@
 }
 
 @media (max-width: 345px) {
+
   .cardWrapper {
     grid-template-rows: 1fr;
     gap: 2rem;
