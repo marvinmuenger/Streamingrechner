@@ -371,6 +371,20 @@ export default function Home() {
           />
         </div>
       </card>
+      <card className={styles.resultContainer}>
+        <card className={styles.resultRechenzentrenContainer}>
+          <card className={styles.resultTextContainer}>
+          </card>
+        </card>
+        <card className={styles.resultNetzwerkeContainer}>
+          <card className={styles.resultTextContainer}>
+          </card>
+        </card>
+        <card className={styles.resultEndgeräteContainer}>
+          <card className={styles.resultTextContainer}>
+          </card>
+        </card>
+      </card>
     </main>
   </div>  
   );
