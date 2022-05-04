@@ -29,46 +29,42 @@
 }
 
 .resultRechenzentrenContainer{
-  height: 5rem;
   margin: 0;
+  margin-left: 20%;
   grid-column:1;
   background-color: red;
   gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
-}
-
-.resultRechenzentrenContainer::after{
-  content: " ";
-  display: grid;
-  position: relative;
-  width: 100%;
-  height: 5rem;
-  top: -268%;
-  left: 0;
-  background: blue;
-  transform-origin: bottom right;
-  -ms-transform: skew(-30deg, 0deg);
-  -webkit-transform: skew(-30deg, 0deg);
-  transform: skew(-30deg, 0deg);
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 0 0;
 }
 
 .resultNetzwerkeContainer{
   margin: 0;
+  margin-left: 20%;
   grid-column:2;
   background-color: red;
   gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 0 0;
 }
 
 .resultEndgeräteContainer{
   margin: 0;
+  margin-left: 20%;
   grid-column:1;
   background-color: red;
   gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 0 0;
 }
 
 .resultTextContainer{
