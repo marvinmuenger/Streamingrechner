@@ -23,7 +23,16 @@ const options = {
            stacked: true
        }]
    },
-   maintainAspectRatio: false
+   maintainAspectRatio: false,
+   plugins: {
+     legend: {
+       labels: {
+         font: {
+           family: 'Avenir',
+         }
+     }
+   }
+  }
 }
 
 const data = {
