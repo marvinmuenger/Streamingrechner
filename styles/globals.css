@@ -5,9 +5,9 @@ body {
   text-align: center;
   font-family: Avenir;
   text-align: left;
-    background: #F5F7F6;
+  background: #F5F7F6;
   mix-blend-mode: normal;
-  color: #2C2C2C;
+  color:#111;
 }
 
 a {
@@ -16,27 +16,28 @@ a {
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 2.75rem;
+  margin: 3rem 0.4rem;
 }
 
 h2 {
   font-weight: 500;
   line-height: 1.5;
   font-size: 1rem;
-  color: #465E69;
-  margin: 3em 0;
+  color: #111;
+  margin: 3em 0.4rem;
 }
 
 h3 {
   margin: 0;
-  line-height: 1.6rem;
+  line-height: 2.1rem;
   font-size: 1.1rem;
 }
 
 p {
   line-height: 1.75rem;
   font-size: 1rem;
-  color: #465E69;
+  color: #111;
 }
 
 card {
@@ -44,6 +45,7 @@ card {
   border-radius: 3.125rem;
   margin: 2rem 0;
   padding: min(4vw, 4rem);
+  box-shadow: 0 19px 30px -15px rgba(0,0,0,.1);
 }
 
 button {

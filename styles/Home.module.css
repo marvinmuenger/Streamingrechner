@@ -1,5 +1,5 @@
 .site {
-  padding: 2.5rem 5rem;
+  padding: 3rem 5.5rem;
   margin: auto;
   max-width: 90rem;
 }
@@ -98,7 +98,7 @@
 }
 
 .input {
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-family: 'Avenir';
   line-height: 1.4375rem;
   letter-spacing: 0.009368rem;
   color: rgba(0, 0, 0, 0.6);
@@ -114,7 +114,7 @@
 }
 
 .label {
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-family: 'Avenir';
   font-size: 0.8rem;
   line-height: 1.4375rem;
   letter-spacing: 0.009368rem;
@@ -161,7 +161,7 @@
   .settings {
     grid-template-columns: 0;
     grid-template-rows: 1fr;
-    padding: 2rem 0.75rem;
+    padding: 2rem 1rem;
   }
 
   .cardText {

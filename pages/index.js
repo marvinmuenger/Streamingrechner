@@ -33,12 +33,12 @@ const data = {
     data: [1, 1],
     stack:"",
     backgroundColor: [
-      '#C5E6F0',
-      '#C5E6F0'
+      '#7FD1AE',
+      '#7FD1AE'
     ],
     borderColor: [
-      '#C5E6F0',
-      '#C5E6F0'
+      '#7FD1AE',
+      '#7FD1AE'
     ],
     borderWidth: 1
   }, 
@@ -47,12 +47,12 @@ const data = {
     data: [2, 1],
     stack:"",
     backgroundColor: [
-      '#9288C8',
-      '#9288C8'
+      '#8AB0CD',
+      '#8AB0CD'
     ],
     borderColor: [
-      '#9288C8',
-      '#9288C8'
+      '#8AB0CD',
+      '#8AB0CD'
     ],
     borderWidth: 1
   },
@@ -61,12 +61,12 @@ const data = {
     data: [1, 3.2],
     stack:"",
     backgroundColor: [
-      '#45D1B8',
-      '#45D1B8'
+      '#C9FDFF',
+      '#C9FDFF'
     ],
     borderColor: [
-      '#45D1B8',
-      '#45D1B8'
+      '#C9FDFF',
+      '#C9FDFF'
     ],
     borderWidth: 1
   }]

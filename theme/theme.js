@@ -4,7 +4,7 @@ export const theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#70CEB9',
+      main: '#7FD1AE',
     },
     secondary: {
       main: '#fff',
@@ -12,6 +12,7 @@ export const theme = createTheme({
   },
   typography: {
     fontSize: 14,
+    fontFamily: 'Avenir',
   },
   shape: {
     borderRadius: 10,
