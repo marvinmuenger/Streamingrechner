@@ -11,7 +11,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Avenir',
   },
   shape: {
