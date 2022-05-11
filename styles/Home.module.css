@@ -135,7 +135,7 @@
 
 @media (max-width: 900px) {
   .info {
-    display: flex;
+    display: unset;
   }
 
   .settings {

@@ -205,15 +205,13 @@ export default function Home() {
       <main>
         <card className={styles.settings}>
           <div className={styles.cardText}>
-            <div style={{display: 'flex', flexDirection: 'row'}}>
-              <h3 style={{overflow: 'visible'}}>
-                Finde heraus, wieviel CO2 du beim Videostreamen verursachst
-              </h3>
-              <Info style={{overflow: 'visible', }} className={styles.info} />
-            </div>
-              <p className={styles.paragraph}>
-                Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
-              </p>
+            <h3 style={{overflow: 'visible'}}>
+              <Info style={{overflow: 'visible', float: 'right', marginTop: '-1.2rem', marginRight: '0.3rem', marginBottom: '1rem', width: '20px', color: 'rgba(0, 0, 0, 0.75)'}} className={styles.info} />
+              Finde heraus, wieviel CO2 du beim Videostreamen verursachst
+            </h3>
+            <p className={styles.paragraph}>
+              Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
+            </p>
           </div>
           <div className={styles.controls}>
             <div className={styles.cardWrapper}>
