@@ -4,6 +4,11 @@
   max-width: 90rem;
 }
 
+.info {
+  position: initial;
+  display: none;
+}
+
 .chartcontainer {
   display: block;
 }
@@ -89,6 +94,7 @@
 }
 
 .settings {
+  position: relative;
   display: grid;
   gap: 0 3vw;
   grid-template-columns: repeat(2, 1fr);
@@ -128,6 +134,10 @@
 }
 
 @media (max-width: 900px) {
+  .info {
+    display: flex;
+  }
+
   .settings {
     gap: 0;
   }

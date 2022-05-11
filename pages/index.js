@@ -13,6 +13,7 @@ import NativeSelect from '@mui/material/NativeSelect';
 import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
 import MuiButton from '@mui/material/Button';
+import Info from '../public/info.svg'
 
 const options = {
   scales: {
@@ -204,9 +205,12 @@ export default function Home() {
       <main>
         <card className={styles.settings}>
           <div className={styles.cardText}>
-              <h3>
+            <div style={{display: 'flex', flexDirection: 'row'}}>
+              <h3 style={{overflow: 'visible'}}>
                 Finde heraus, wieviel CO2 du beim Videostreamen verursachst
               </h3>
+              <Info style={{overflow: 'visible', }} className={styles.info} />
+            </div>
               <p className={styles.paragraph}>
                 Der Energieverbrauch eines Videostreams ist von mehreren Faktoren, wie dem Endgerät, der Videoauflösung und der Netzwerkverbindung, abhängig.
               </p>
