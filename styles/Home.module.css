@@ -28,12 +28,6 @@
   gridTemplateColumns: repeat(2, 1fr);
 }
 
-.test {
-  grid-column: 1 / span 2;
-  witdht: 100%;
-  text-align: center;
-}
-
 .cardWrapper {
   display: grid; 
   grid-template-rows: repeat(2, 1fr);
@@ -42,7 +36,6 @@
 .resultRechenzentrenContainer{
   margin-left: 20%;
   grid-column:1;
-  gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
 }
@@ -50,7 +43,6 @@
 .resultNetzwerkeContainer{
   margin-left: 20%;
   grid-column:2;
-  gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
 }
@@ -58,7 +50,6 @@
 .resultEndgeräteContainer{
   margin-left: 20%;
   grid-column:1;
-  gap: 2rem;
   gridTemplateColumns: repeat(2, 1fr);
   width: inherit;
 }
