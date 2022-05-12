@@ -34,21 +34,27 @@
 }
 
 .resultRechenzentrenContainer{
+  margin-left: 10%;
   grid-column:1;
-  width: 100%;
+  width: 80%;
   position:static;
+  padding: 0;
 }
 
 .resultNetzwerkeContainer{
+  margin-left: 10%;
   grid-column:2;
-  width: 100%;
+  width: 80%;
   top: 0;
+  padding: 0;
 }
 
 .resultEndgeräteContainer{
+  margin-left: 10%;
   grid-column: 1;
-  width: 100%;
+  width: 80%;
   top: 0;
+  padding: 0;
 }
 
 .resultTextContainer{
