@@ -39,6 +39,7 @@
   width: 80%;
   position:static;
   padding: 0;
+  overflow: visible;
 }
 
 .resultNetzwerkeContainer{
@@ -47,6 +48,7 @@
   width: 80%;
   top: 0;
   padding: 0;
+  overflow: visible;
 }
 
 .resultEndgeräteContainer{
@@ -55,6 +57,7 @@
   width: 80%;
   top: 0;
   padding: 0;
+  overflow: visible;
 }
 
 .resultTextContainer{
@@ -62,6 +65,21 @@
   background-color: yellow;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.datacenterSvg{
+  height: 40%;
+  width: 40%;
+}
+
+.networkSvg{
+  height: 40%;
+  width: 40%;
+}
+
+.resultSvg{
+  height: 40%;
+  width: 40%;
 }
 
 .cardText {
