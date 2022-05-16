@@ -21,6 +21,34 @@
   height: min(calc(10vw + 12rem), 25rem);
 }
 
+.resultTextOne{
+  font-weight: normal;
+  margin-bottom: 5%;
+}
+
+.resultTextTwo{
+  font-size: 32pt;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.resultTextThree{
+  font-size: 12pt;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.resultTextFour{
+  font-size: 12pt;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.resultTextFive{
+  font-size: 12pt;
+  font-weight: normal;
+  font-weight: bold;
+}
+
 .resultContainer{
   display:grid;
   gap: 2rem;
@@ -73,8 +101,8 @@
 }
 
 .networkSvg{
-  height: 40%;
-  width: 40%;
+  height: 50%;
+  width: 50%;
 }
 
 .resultSvg{
