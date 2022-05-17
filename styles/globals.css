@@ -61,6 +61,12 @@ button {
   box-sizing: border-box;
 }
 
+@media (max-width: 650px) {
+  a {
+    font-size: 0.5rem;
+  }
+}
+
 @media (min-width: 1300px) {  
   h1 {
     font-size: 3rem;
