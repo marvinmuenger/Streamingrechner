@@ -14,6 +14,7 @@ import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
 import MuiButton from '@mui/material/Button';
 import Info from '../public/info.svg';
+import BasicModal from '../components/modal';
 
 const options = {
   scales: {
@@ -43,42 +44,27 @@ const data = {
     data: [1, 1],
     stack:"",
     backgroundColor: [
-      '#7FD1AE',
-      '#7FD1AE'
-    ],
-    borderColor: [
-      '#7FD1AE',
-      '#7FD1AE'
-    ],
-    borderWidth: 1
+      '#E7F2F0',
+      '#E7F2F0'
+    ]
   }, 
   {  
     label: 'Kommunikationsnetze',
     data: [2, 1],
     stack:"",
     backgroundColor: [
-      '#8AB0CD',
-      '#8AB0CD'
-    ],
-    borderColor: [
-      '#8AB0CD',
-      '#8AB0CD'
-    ],
-    borderWidth: 1
+      '#dfddeb',
+      '#dfddeb'
+    ]
   },
   {
     label: 'Geräte',
     data: [1, 3.2],
     stack:"",
     backgroundColor: [
-      '#C9FDFF',
-      '#C9FDFF'
-    ],
-    borderColor: [
-      '#C9FDFF',
-      '#C9FDFF'
-    ],
-    borderWidth: 1
+      '#cfe0ea',
+      '#cfe0ea'
+    ]
   }]
 }
 
@@ -206,7 +192,7 @@ export default function Home() {
         <card className={styles.settings}>
           <div className={styles.cardText}>
             <h3 style={{overflow: 'visible'}}>
-              <Info style={{overflow: 'visible', float: 'right', marginTop: '-1.2rem', marginRight: '0.3rem', marginBottom: '1rem', width: '20px', color: 'rgba(0, 0, 0, 0.75)'}} className={styles.info} />
+              <BasicModal />
               Finde heraus, wieviel CO2 du beim Videostreamen verursachst
             </h3>
             <p className={styles.paragraph}>
@@ -353,7 +339,7 @@ export default function Home() {
         </div>
       </card>
 
-      <h3 ref={myRef} id="result" style={{textAlign: 'center'}}>
+      <h3 ref={myRef} id="result" style={{textAlign: 'center', marginTop: '5rem'}}>
           Resultat
       </h3>
 
@@ -368,7 +354,7 @@ export default function Home() {
         </div>
       </card>
 
-      <card className={styles.resultContainer}>
+      <div className={styles.resultContainer}>
           <svg className={styles.resultRechenzentrenContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.1" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#68C9BA"/>
             <path d="M472.682 124.03C502.313 153.207 467.325 181.381 405.745 182.141C283.317 175.137 255.69 81.0076 264.943 59.9029C274.196 38.7983 301.746 38.2223 342.567 81.2153C383.388 124.208 435.643 87.5574 472.682 124.03Z" stroke="white" strokeWidth="1.5"/>
@@ -378,13 +364,13 @@ export default function Home() {
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Rechenzentren</h3>
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: Lorem ipsum dolor</p>
+              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr</p>
+              <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
           <svg className={styles.resultNetzwerkeContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path opacity="0.1" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#2D9CDB"/>
+            <path opacity="0.5" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#d4d2e4"/>
             <ellipse rx="35.0679" ry="18.6437" transform="matrix(0.950089 0.311978 -0.399416 0.91677 440.521 312.032)" stroke="white" strokeWidth="1.5"/>
             <path d="M124.968 253.712C55.2412 265.919 38.3959 201.795 86.0723 127.691C194.343 -12.8766 365.34 28.8655 391.418 56.6612C417.496 84.457 396.539 117.798 296.052 132.395C195.564 146.991 212.128 238.454 124.968 253.712Z" stroke="white" strokeWidth="1.5"/>
             <foreignObject x="-15%" y="10%" width="100%" height="100%">
@@ -393,9 +379,9 @@ export default function Home() {
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Netzwerke</h3>
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: Lorem ipsum dolor</p>
+              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr</p>
+              <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
           <svg className={styles.resultEndgeräteContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -407,12 +393,12 @@ export default function Home() {
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Endgeräte</h3>
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: Lorem ipsum dolor</p>
+              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr</p>
+              <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
-          </card>
+        </div>
     </main>
   </div>  
   );

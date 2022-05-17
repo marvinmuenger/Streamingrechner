@@ -1,10 +1,11 @@
 .site {
   padding: 3rem 5.5rem;
   margin: auto;
-  max-width: 90rem;
+  max-width: 80rem;
 }
 
 .info {
+  cursor: pointer;
   position: initial;
   display: none;
 }
@@ -23,35 +24,37 @@
 
 .resultTextOne{
   font-weight: normal;
+  font-size: 1.5rem;
   margin-bottom: 5%;
 }
 
 .resultTextTwo{
-  font-size: 32pt;
+  font-size: max(calc(3rem - 4vw), 2.5rem);
   color: rgba(0, 0, 0, 0.75);
 }
 
 .resultTextThree{
-  font-size: 12pt;
+  font-size: 1.5rem;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.75);
 }
 
 .resultTextFour{
-  font-size: 12pt;
+  font-size: 1.5rem;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.75);
 }
 
 .resultTextFive{
-  font-size: 12pt;
-  font-weight: normal;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .resultContainer{
+  margin-top: 4rem;
   display:grid;
-  gap: 2rem;
+  row-gap: max(calc(7.5vw - 2.5rem), 0.75rem);
+  column-gap: max(calc(15vw - 5rem), 1.25rem);
   width: inherit;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -63,28 +66,22 @@
 
 .resultRechenzentrenContainer{
   margin-left: 10%;
-  grid-column:1;
-  width: 80%;
-  position:static;
-  padding: 0;
+  grid-column: 1;
+  width: 90%;
   overflow: visible;
 }
 
 .resultNetzwerkeContainer{
   margin-left: 10%;
-  grid-column:2;
-  width: 80%;
-  top: 0;
-  padding: 0;
+  grid-column: 2;
+  width: 90%;
   overflow: visible;
 }
 
 .resultEndgeräteContainer{
   margin-left: 10%;
   grid-column: 1;
-  width: 80%;
-  top: 0;
-  padding: 0;
+  width: 90%;
   overflow: visible;
 }
 
@@ -214,11 +211,40 @@
 
 }
 
+@media (max-width: 650px) {
+  .resultContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .resultNetzwerkeContainer {
+    grid-column: 1;
+  }
+
+  .resultTextOne{
+    font-size: 1.25rem;
+  }
+  
+  .resultTextTwo{
+    font-size: 2rem;
+  }
+  
+  .resultTextThree{
+    font-size: 1.25rem;
+  }
+  
+  .resultTextFour{
+    font-size: 1.25rem;
+  }
+
+  .resultTextFive{
+    font-size: 1.25rem;
+  }
+}
+
 @media (max-width: 345px) {
 
   .cardWrapper {
     grid-template-rows: 1fr;
-    gap: 2rem;
   }
 
   .selectContainer {
