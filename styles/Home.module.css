@@ -160,6 +160,13 @@
   min-width: 10rem;
 }
 
+.footer {
+  bottom: 0;
+  width: 90%;
+  padding: 2rem;
+  border-top: rgba(0, 0, 0, 0.3) 1px solid;
+}
+
 @media (max-width: 900px) {
   .info {
     display: unset;

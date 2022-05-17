@@ -179,6 +179,7 @@ export default function Home() {
   const executeScroll = () => scrollToRef(myRef)
 
   return (
+    <div>
     <div className={styles.site}>
       <h1 className={styles.title}>
         Streaming Energie- und CO2-Rechner
@@ -401,6 +402,26 @@ export default function Home() {
         </div>
     </main>
   </div>  
+  <div style={{display: 'flex', justifyContent: 'center', marginTop: '5rem'}}>
+    <div className={styles.footer}>
+        <div style={{textAlign: 'center'}}>Bachelorarbeit UZH</div>
+        <div style={{textAlign: 'center'}}>© 2022</div>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem' }}>
+          <div style={{marginTop: '-8.5px'}}>
+            <div style={{height: '17px'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector created by macrovector - www.freepik.com</a></div>
+            <div style={{height: '17px'}}><a href="https://www.freepik.com/vectors/data-center">Data center vector created by macrovector - www.freepik.com</a></div>
+            <div style={{height: '17px'}}><a href='https://www.freepik.com/vectors/mobile-tower'>Mobile tower vector created by macrovector - www.freepik.com</a></div>
+          </div>
+          <div style={{display: 'grid', justifyContent: 'center', alignContent: 'center'}}>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem'}}>
+            <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
+            <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
   );
 }
 
