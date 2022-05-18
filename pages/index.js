@@ -340,9 +340,14 @@ export default function Home() {
         </div>
       </card>
 
-      <h3 ref={myRef} id="result" style={{textAlign: 'center', marginTop: '5rem'}}>
-          Resultat
-      </h3>
+      <div ref={myRef} id="result" style={{textAlign: 'center', marginTop: '5rem'}}>
+        <h3> 
+            Resultat:
+        </h3>
+        <p>
+          <strong>109</strong> g CO2e oder <strong>0.21</strong> kWh
+        </p>
+      </div>
 
       <card className={styles.chartcontainer}>
         <div className={styles.chart}>
@@ -370,6 +375,7 @@ export default function Home() {
               <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
+          <div style={{display: 'flex', justifyContent: 'end'}}>
           <svg className={styles.resultNetzwerkeContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#d4d2e4"/>
             <ellipse rx="35.0679" ry="18.6437" transform="matrix(0.950089 0.311978 -0.399416 0.91677 440.521 312.032)" stroke="white" strokeWidth="1.5"/>
@@ -385,6 +391,7 @@ export default function Home() {
               <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
+          </div>
           <svg className={styles.resultEndgeräteContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.1" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#0772BF"/>
             <path d="M248.628 259.341C216.323 227.53 254.467 196.813 321.604 195.985C455.08 203.621 485.2 306.245 475.113 329.254C465.025 352.263 434.988 352.891 390.484 306.019C345.979 259.146 289.009 299.104 248.628 259.341Z" stroke="white" strokeWidth="1.5"/>

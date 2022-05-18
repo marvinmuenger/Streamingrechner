@@ -69,6 +69,7 @@
   grid-column: 1;
   width: 90%;
   overflow: visible;
+  max-width: 20rem;
 }
 
 .resultNetzwerkeContainer{
@@ -76,6 +77,7 @@
   grid-column: 2;
   width: 90%;
   overflow: visible;
+  max-width: 20rem;
 }
 
 .resultEndgeräteContainer{
@@ -83,6 +85,7 @@
   grid-column: 1;
   width: 90%;
   overflow: visible;
+  max-width: 20rem;
 }
 
 .resultTextContainer{
@@ -256,5 +259,16 @@
 
   .selectContainer {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .resultContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .resultEndgeräteContainer {
+    grid-column: 3;
   }
 }
