@@ -360,6 +360,12 @@ export default function Home() {
         </div>
       </card>
 
+      <div style={{textAlign: 'left', marginTop: '5rem'}}>
+        <h3> 
+            Zusammensetzung der CO2-Emissionen:
+        </h3>
+      </div>
+
       <div className={styles.resultContainer}>
           <svg className={styles.resultRechenzentrenContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.1" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#68C9BA"/>
@@ -375,7 +381,7 @@ export default function Home() {
               <p className={styles.resultTextFive}>Erfahre mehr →</p>
             </foreignObject>
           </svg>
-          <div style={{display: 'flex', justifyContent: 'end'}}>
+          <div style={{display: 'flex'}}>
           <svg className={styles.resultNetzwerkeContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.5" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#d4d2e4"/>
             <ellipse rx="35.0679" ry="18.6437" transform="matrix(0.950089 0.311978 -0.399416 0.91677 440.521 312.032)" stroke="white" strokeWidth="1.5"/>
@@ -413,13 +419,11 @@ export default function Home() {
     <div className={styles.footer}>
         <div style={{textAlign: 'center'}}>Bachelorarbeit UZH</div>
         <div style={{textAlign: 'center'}}>© 2022</div>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem' }}>
-          <div>
-            <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector created by macrovector - www.freepik.com</a></div>
-            <div style={{lineHeight: '0.75rem'}}><a href="https://www.freepik.com/vectors/data-center">Data center vector created by macrovector - www.freepik.com</a></div>
-            <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/mobile-tower'>Mobile tower vector created by macrovector - www.freepik.com</a></div>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem', height: '40px' }}>
+        <div style={{display: 'grid', justifyContent: 'start', alignContent: 'center'}}>
+            <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector</a><a href="https://www.freepik.com/vectors/data-center">, data center vector</a><a href='https://www.freepik.com/vectors/mobile-tower'> and mobile tower vector</a><a href='https://www.freepik.com/'> created by macrovector - www.freepik.com</a></div>
           </div>
-          <div style={{display: 'grid', justifyContent: 'center', alignContent: 'center'}}>
+          <div style={{display: 'grid', justifyContent: 'end', alignContent: 'center'}}>
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem'}}>
             <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
             <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
