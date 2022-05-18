@@ -224,6 +224,7 @@
 @media (max-width: 600px) {
   .resultContainer {
     grid-template-columns: 1fr;
+    margin-top: 2rem;
   }
 
   .resultNetzwerkeContainer {
