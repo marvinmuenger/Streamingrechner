@@ -221,7 +221,7 @@
 
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .resultContainer {
     grid-template-columns: 1fr;
   }
@@ -262,7 +262,7 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .resultContainer {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
