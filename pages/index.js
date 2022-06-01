@@ -15,6 +15,7 @@ import {Bar} from 'react-chartjs-2';
 import MuiButton from '@mui/material/Button';
 import Info from '../public/info.svg';
 import BasicModal from '../components/modal';
+import Link from 'next/link'
 
 const options = {
   scales: {
@@ -378,7 +379,9 @@ export default function Home() {
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr →</p>
+              <Link href="/rechenzentren">
+                <p className={styles.resultTextFive}>Erfahre mehr →</p>
+              </Link>
             </foreignObject>
           </svg>
           <svg className={styles.resultNetzwerkeContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -393,7 +396,9 @@ export default function Home() {
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr →</p>
+              <Link href="/netzwerke">
+                <p className={styles.resultTextFive}>Erfahre mehr →</p>
+              </Link>
             </foreignObject>
           </svg>
           <svg className={styles.resultEndgeräteContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -407,8 +412,10 @@ export default function Home() {
               <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
-              <p className={styles.resultTextFive}>Erfahre mehr →</p>
-            </foreignObject>
+              <Link href="/endgeraete">
+                <p className={styles.resultTextFive}>Erfahre mehr →</p>
+              </Link>
+              </foreignObject>
           </svg>
         </div>
     </main>
