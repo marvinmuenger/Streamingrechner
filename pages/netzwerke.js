@@ -123,21 +123,14 @@ export default function Home() {
                 <h1 className={styles.title}>
                     Netzwerke
                 </h1>
-
                 <h2>
-                    Mit diesem Rechner kannst du den Energieverbrauch und die CO2-Emissionen eines Video-Streams berechnen.
+                    Hier erfährst du mehr über die Netzwerke.
                 </h2>
-
                 <main>
-
-
-
-
-
-
-
-
-
+                    <card className={styles.settings}>
+                        <div className={styles.cardText}>
+                        </div>
+                    </card>
                 </main>
             </div>
 
