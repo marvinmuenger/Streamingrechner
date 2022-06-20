@@ -31,42 +31,11 @@ const options = {
      legend: {
        labels: {
          font: {
-           family: 'Avenir',
+           family: 'Arial',
          }
      }
    }
   }
-}
-
-const data = {
-  labels: ['Test 1', 'Test 2'],
-  datasets: [{
-    label: 'Rechenzentren',
-    data: [1, 1],
-    stack:"",
-    backgroundColor: [
-      '#E7F2F0',
-      '#E7F2F0'
-    ]
-  }, 
-  {  
-    label: 'Kommunikationsnetze',
-    data: [2, 1],
-    stack:"",
-    backgroundColor: [
-      '#dfddeb',
-      '#dfddeb'
-    ]
-  },
-  {
-    label: 'Geräte',
-    data: [1, 3.2],
-    stack:"",
-    backgroundColor: [
-      '#cfe0ea',
-      '#cfe0ea'
-    ]
-  }]
 }
 
 const scrollToRef = (ref) => window.scrollTo({left: 0, top: ref.current.offsetTop, behavior: 'smooth'});   
@@ -82,80 +51,44 @@ const MenuProps = {
   },
 };
 
-const devices = [
-  'TV',
-  'Computer',
-  'Notebook',
-  'Tablet',
-  'Smartphone'
-];
-
-const connections = [
-  'WLAN',
-  '3G',
-  '4G',
-  '5G'
-];
-
-const resolutions = [
-  'SD',
-  'HD',
-  'UHD 4K'
-];
-
-const countries = [
-  'Schweiz',
-  'Deutschland',
-  'Frankreich',
-  'Italien',
-  'Spanien',
-  'USA'
-];
-
 export default function Home() {
-  const [deviceName, setDeviceName] = React.useState([]);
-  const [connection, setConnection] = React.useState([]);
-  const [resolution, setResolution] = React.useState([]);
-  const [country, setCountry] = React.useState([]);
+  const [deviceName, setDeviceName] = React.useState(null);
+  const [hasDeviceError, setHasDeviceError] = React.useState(false);
+  const [connection, setConnection] = React.useState(null);
+  const [hastConnectionError, setHasConnectionError] = React.useState(false);
+  const [resolution, setResolution] = React.useState(null);
+  const [hasResolutionError, setHasResolutionError] = React.useState(false);
+  const [country, setCountry] = React.useState(null);
+  const [hasCountryError, setHasCountryError] = React.useState(false);
 
   const handleDeviceChange = (event) => {
     const {
       target: { value },
     } = event;
-    setDeviceName(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    setDeviceName(value);
   };
+
 
   const handleNetworkChange = (event) => {
     const {
       target: { value },
     } = event;
-    setConnection(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    setConnection(value);
   };
 
   const handleResolutionChange = (event) => {
     const {
       target: { value },
     } = event;
-    setResolution(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    setResolution(value);
   };
 
   const handleCountryChange = (event) => {
     const {
       target: { value },
     } = event;
-    setCountry(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
-    );
+    // set Country to value as int
+    setCountry(value);
   };
 
   const [duration, setDuration] = React.useState(2);
@@ -177,7 +110,81 @@ export default function Home() {
   };
 
   const myRef = useRef(null)
-  const executeScroll = () => scrollToRef(myRef)
+
+  function executeSubmit() {
+    validateInput();
+  }
+
+  function validateInput() {
+    //log devicename, connection, resolution, country to console
+    console.log(deviceName);
+    console.log(connection);
+    console.log(resolution);
+    console.log(country);
+
+    if (!deviceName) {
+      setHasDeviceError(true);
+    } else {
+      setHasDeviceError(false);
+    }
+    if (!connection) {
+      setHasConnectionError(true);
+    } else {
+      setHasConnectionError(false);
+    }
+    if (!resolution) {
+      setHasResolutionError(true);
+    } else {
+      setHasResolutionError(false);
+    }
+    if (!country) {
+      setHasCountryError(true);
+    } else {
+      setHasCountryError(false);
+    }
+    if (deviceName && connection && resolution && country) {
+      setDatacenter(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
+      setNetwork(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
+      setDevice(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
+
+      scrollToRef(myRef)
+    }
+  }
+
+  const [datacenter, setDatacenter] = React.useState([]);
+  const [network, setNetwork] = React.useState([]);
+  const [device, setDevice] = React.useState([]);
+
+  const data = {
+    labels: ['', ''],
+    datasets: [{
+      label: 'Rechenzentren',
+      data: [datacenter, 1],
+      stack:"",
+      backgroundColor: [
+        '#E7F2F0',
+        '#E7F2F0'
+      ]
+    }, 
+    {  
+      label: 'Kommunikationsnetze',
+      data: [network, 1],
+      stack:"",
+      backgroundColor: [
+        '#dfddeb',
+        '#dfddeb'
+      ]
+    },
+    {
+      label: 'Geräte',
+      data: [device, 3.2],
+      stack:"",
+      backgroundColor: [
+        '#cfe0ea',
+        '#cfe0ea'
+      ]
+    }]
+  }
 
   return (
     <div>
@@ -204,7 +211,7 @@ export default function Home() {
           <div className={styles.controls}>
             <div className={styles.cardWrapper}>
             <div className={styles.selectContainer}>
-              <FormControl className={styles.select}>
+              <FormControl className={styles.select} error={hasDeviceError}>
                 <InputLabel id="device-name-label">Gerät</InputLabel>
                 <NativeSelect
                   labelId="device-label"
@@ -215,18 +222,15 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  {devices.map((name) => (
-                    <option
-                      key={name}
-                      value={name}
-                    >
-                      {name}
-                    </option>
-                  ))}
+                  <option value={0.24}>TV</option>
+                  <option value={0.5}>Computer</option>
+                  <option value={0.1}>Notebook</option>
+                  <option value={0.2}>Tablet</option>
+                  <option value={0.3}>Smartphone</option>
                 </NativeSelect>
               </FormControl>
 
-              <FormControl className={styles.select}>
+              <FormControl className={styles.select} error={hasResolutionError}>
                 <InputLabel id="resolution-name-label">Auflösung</InputLabel>
                 <NativeSelect
                   labelId="resolution-label"
@@ -237,18 +241,15 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  {resolutions.map((resolution) => (
-                    <option
-                      key={resolution}
-                      value={resolution}
-                    >
-                      {resolution}
-                    </option>
-                  ))}
+                  <option value={0.24}>Standard Definition</option>
+                  <option value={0.54}>High Definition</option>
+                  <option value={2}>Full-High Definition (2K)</option>
+                  <option value={0.34}>UHD 4K</option>  
+                  <option value={0.24}>8K</option>
                 </NativeSelect>
               </FormControl>
 
-              <FormControl className={styles.select}>
+              <FormControl className={styles.select} error={hastConnectionError}>
                 <InputLabel id="network-name-label">Netzwerk</InputLabel>
                 <NativeSelect
                   labelId="network-label"
@@ -259,18 +260,14 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  {connections.map((connection) => (
-                    <option
-                      key={connection}
-                      value={connection}
-                    >
-                      {connection}
-                    </option>
-                  ))}
+                  <option value={0.24}>WLAN</option>
+                  <option value={0.54}>3G</option>
+                  <option value={0.34}>4G</option>  
+                  <option value={0.24}>5G</option>
                 </NativeSelect>
               </FormControl>
 
-              <FormControl className={styles.select}>
+              <FormControl className={styles.select} error={hasCountryError}>
                 <InputLabel id="country-name-label">Land</InputLabel>
                 <NativeSelect
                   labelId="country-label"
@@ -281,14 +278,10 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  {countries.map((country) => (
-                    <option
-                      key={country}
-                      value={country}
-                    >
-                      {country}
-                    </option>
-                  ))}
+                  <option value={0.24}>Welt</option>
+                  <option value={0.54}>Schweiz</option>
+                  <option value={0.34}>Deutschland</option>  
+                  <option value={0.24}>Italien</option>
                 </NativeSelect>
               </FormControl>
             </div>
@@ -332,7 +325,7 @@ export default function Home() {
 
             <div>
               <MuiButton
-                onClick={executeScroll}
+                onClick={executeSubmit}
                 variant="contained" >
                 Ausrechnen
               </MuiButton>

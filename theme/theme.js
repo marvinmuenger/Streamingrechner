@@ -12,7 +12,7 @@ export const theme = createTheme({
   },
   typography: {
     fontSize: 12,
-    fontFamily: 'Avenir',
+    fontFamily: 'Arial',
   },
   shape: {
     borderRadius: 10,
