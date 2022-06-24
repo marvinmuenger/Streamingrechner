@@ -125,7 +125,7 @@
 }
 
 .backButton{
-  background-color: black;
+  background-color: rgb(122,206,185);
   height: 2.5rem;
   width: 2.5rem;
   float: left;
@@ -135,16 +135,12 @@
 }
 
 .backButton:hover{
-  background-color: white;
+  background-color: rgb(78,144,129);
+  cursor: pointer;
 }
 
 .backArrow{
   fill: white;
-  transition: 0.5s;
-}
-
-.backArrow:hover{
-  fill: black;
 }
 
 .settings {
