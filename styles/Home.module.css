@@ -124,6 +124,29 @@
   padding: 1.2rem 0.5rem;
 }
 
+.backButton{
+  background-color: black;
+  height: 2.5rem;
+  width: 2.5rem;
+  float: left;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.backButton:hover{
+  background-color: white;
+}
+
+.backArrow{
+  fill: white;
+  transition: 0.5s;
+}
+
+.backArrow:hover{
+  fill: black;
+}
+
 .settings {
   position: relative;
   display: grid;
