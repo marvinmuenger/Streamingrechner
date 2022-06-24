@@ -137,6 +137,7 @@
 .backButton:hover{
   background-color: rgb(78,144,129);
   cursor: pointer;
+  box-shadow: 0 0 0 0.2rem rgb(122,206,185);
 }
 
 .backArrow{
