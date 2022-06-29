@@ -116,12 +116,6 @@ export default function Home() {
   }
 
   function validateInput() {
-    //log devicename, connection, resolution, country to console
-    console.log(deviceName);
-    console.log(connection);
-    console.log(resolution);
-    console.log(country);
-
     if (!deviceName) {
       setHasDeviceError(true);
     } else {
@@ -143,9 +137,9 @@ export default function Home() {
       setHasCountryError(false);
     }
     if (deviceName && connection && resolution && country) {
-      setDatacenter(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
-      setNetwork(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
-      setDevice(duration*(parseFloat(deviceName) + parseFloat(connection) + parseFloat(resolution) + parseFloat(country)));
+      setDatacenter(parseFloat(country)*duration*0.0013);
+      setNetwork(duration*parseFloat(connection)*parseFloat(resolution)*parseFloat(country));
+      setDevice(duration*parseFloat(deviceName)*parseFloat(country));
 
       scrollToRef(myRef)
     }
@@ -156,35 +150,51 @@ export default function Home() {
   const [device, setDevice] = React.useState([]);
 
   const data = {
-    labels: ['', ''],
+    labels: ['Videostreaming', '1km Autofahrt'],
     datasets: [{
-      label: 'Rechenzentren',
-      data: [datacenter, 1],
+      label: 'Rechenzentrum',
+      barPercentage: 0.7,
+      data: [datacenter, 0],
       stack:"",
       backgroundColor: [
-        '#E7F2F0',
-        '#E7F2F0'
+        '#022E51',
+        '#022E51'
       ]
     }, 
     {  
-      label: 'Kommunikationsnetze',
-      data: [network, 1],
+      label: 'Kommunikationsnetz',
+      barPercentage: 0.7,
+      data: [network, 0],
       stack:"",
       backgroundColor: [
-        '#dfddeb',
-        '#dfddeb'
+        '#8FBAE5',
+        '#8FBAE5'
       ]
     },
     {
-      label: 'Geräte',
-      data: [device, 3.2],
+      label: 'Endgerät',
+      barPercentage: 0.7,
+      data: [device, 0],
       stack:"",
       backgroundColor: [
-        '#cfe0ea',
-        '#cfe0ea'
+        '#70CEB9',
+        '#70CEB9'
       ]
-    }]
+    },
+    {
+      label: 'Autofahrt',
+      barPercentage: 0.7,
+      data: [0, 185],
+      stack:"",
+      backgroundColor: [
+        '#9EA4D2',
+        '#9EA4D2'
+      ]
+    }, ]
   }
+
+  const emissions = Math.round((datacenter+network+device)*100)/100;
+  const energy = Math.round(((datacenter+network+device)/country)*100)/100;
 
   return (
     <div>
@@ -222,11 +232,11 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.24}>TV</option>
-                  <option value={0.5}>Computer</option>
-                  <option value={0.1}>Notebook</option>
-                  <option value={0.2}>Tablet</option>
-                  <option value={0.3}>Smartphone</option>
+                  <option value={0.074}>TV</option>
+                  <option value={0.115}>Computer</option>
+                  <option value={0.022}>Notebook</option>
+                  <option value={0.007}>Tablet</option>
+                  <option value={0.001}>Smartphone</option>
                 </NativeSelect>
               </FormControl>
 
@@ -241,11 +251,10 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.24}>Standard Definition</option>
-                  <option value={0.54}>High Definition</option>
-                  <option value={2}>Full-High Definition (2K)</option>
-                  <option value={0.34}>UHD 4K</option>  
-                  <option value={0.24}>8K</option>
+                  <option value={0.6}>Standard Definition</option>
+                  <option value={3}>High Definition</option>
+                  <option value={8.4}>Full-High Definition (2K)</option>
+                  <option value={24.6}>UHD 4K</option>  
                 </NativeSelect>
               </FormControl>
 
@@ -260,10 +269,11 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.24}>WLAN</option>
-                  <option value={0.54}>3G</option>
-                  <option value={0.34}>4G</option>  
-                  <option value={0.24}>5G</option>
+                  <option value={0.0254}>WLAN (Glasfaser)</option>
+                  <option value={0.0270}>WLAN (Kupfer)</option>
+                  <option value={0.0697}>3G</option>
+                  <option value={0.0091}>4G</option>  
+                  <option value={0.0028}>5G</option>
                 </NativeSelect>
               </FormControl>
 
@@ -278,10 +288,7 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.24}>Welt</option>
-                  <option value={0.54}>Schweiz</option>
-                  <option value={0.34}>Deutschland</option>  
-                  <option value={0.24}>Italien</option>
+                  <option value={465}>Welt</option>
                 </NativeSelect>
               </FormControl>
             </div>
@@ -339,7 +346,7 @@ export default function Home() {
             Resultat:
         </h3>
         <p>
-          <strong>109</strong> g CO2e oder <strong>0.21</strong> kWh
+          <strong>{emissions}</strong> g CO2e oder <strong>{energy}</strong> kWh
         </p>
       </div>
 
@@ -369,7 +376,7 @@ export default function Home() {
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Rechenzentren</h3>
-              <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(datacenter*100) / 100} <span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
               <Link href="/rechenzentren">
@@ -386,7 +393,7 @@ export default function Home() {
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Netzwerke</h3>
-              <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(network*100) / 100}<span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
               <Link href="/netzwerke">
@@ -402,7 +409,7 @@ export default function Home() {
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
               <h3 className={styles.resultTextOne}>Endgeräte</h3>
-              <h3 className={styles.resultTextTwo}>70.48 <span className={styles.resultTextThree}>g CO2e</span></h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(device*100) / 100} <span className={styles.resultTextThree}>g CO2e</span></h3>
               <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
               <Link href="/endgeraete">
