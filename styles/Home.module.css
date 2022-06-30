@@ -51,6 +51,10 @@
   font-weight: 500;
 }
 
+.resultTextFive:hover {
+  text-decoration: underline;
+}
+
 .resultContainer{
   margin-top: 4rem;
   display:grid;
