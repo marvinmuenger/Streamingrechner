@@ -66,6 +66,7 @@ export default function Home() {
       target: { value },
     } = event;
     setDeviceName(value);
+    hideDeviceInput();
   };
 
 
@@ -74,6 +75,7 @@ export default function Home() {
       target: { value },
     } = event;
     setConnection(value);
+    hideNetworkInput();
   };
 
   const handleResolutionChange = (event) => {
@@ -196,6 +198,32 @@ export default function Home() {
   const emissions = Math.round((datacenter+network+device)*100)/100;
   const energy = Math.round(((datacenter+network+device)/country)*100)/100;
 
+  function hideDeviceInput(){
+    if (document.getElementById("TV").selected == true || document.getElementById("Computer").selected == true || document.getElementById("Notebook").selected == true){
+      document.getElementById("3G").setAttribute("disabled", "disabled");
+      document.getElementById("4G").setAttribute("disabled", "disabled");
+      document.getElementById("5G").setAttribute("disabled", "disabled");
+    }
+    else{
+      document.getElementById("3G").removeAttribute("disabled");
+      document.getElementById("4G").removeAttribute("disabled");
+      document.getElementById("5G").removeAttribute("disabled");
+    }
+  }
+
+  function hideNetworkInput(){
+    if (document.getElementById("3G").selected == true || document.getElementById("4G").selected == true || document.getElementById("5G").selected == true){
+      document.getElementById("TV").setAttribute("disabled", "disabled");
+      document.getElementById("Computer").setAttribute("disabled", "disabled");
+      document.getElementById("Notebook").setAttribute("disabled", "disabled");
+    }
+    else{
+      document.getElementById("TV").removeAttribute("disabled");
+      document.getElementById("Computer").removeAttribute("disabled");
+      document.getElementById("Notebook").removeAttribute("disabled");
+    }
+  }
+
   return (
     <div>
     <div className={styles.site}>
@@ -232,11 +260,11 @@ export default function Home() {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.074}>TV</option>
-                  <option value={0.115}>Computer</option>
-                  <option value={0.022}>Notebook</option>
-                  <option value={0.007}>Tablet</option>
-                  <option value={0.001}>Smartphone</option>
+                  <option id="TV" value={0.074}>TV</option>
+                  <option id="Computer" value={0.115}>Computer</option>
+                  <option id="Notebook" value={0.022}>Notebook</option>
+                  <option id="Tablet" value={0.007}>Tablet</option>
+                  <option id="Smartphone" value={0.001}>Smartphone</option>
                 </NativeSelect>
               </FormControl>
 
@@ -271,9 +299,9 @@ export default function Home() {
                   <option hidden selected></option>
                   <option value={0.0254}>WLAN (Glasfaser)</option>
                   <option value={0.0270}>WLAN (Kupfer)</option>
-                  <option value={0.0697}>3G</option>
-                  <option value={0.0091}>4G</option>  
-                  <option value={0.0028}>5G</option>
+                  <option id="3G" value={0.0697}>3G</option>
+                  <option id="4G" value={0.0091}>4G</option>
+                  <option id="5G" value={0.0028}>5G</option>
                 </NativeSelect>
               </FormControl>
 
