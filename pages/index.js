@@ -139,7 +139,7 @@ export default function Home() {
       setHasCountryError(false);
     }
     if (deviceName && connection && resolution && country) {
-      setDatacenter(parseFloat(country)*duration*0.0013);
+      setDatacenter(parseFloat(country)*duration*0.021*parseFloat(resolution));
       setNetwork(duration*parseFloat(connection)*parseFloat(resolution)*parseFloat(country));
       setDevice(duration*parseFloat(deviceName)*parseFloat(country));
 
