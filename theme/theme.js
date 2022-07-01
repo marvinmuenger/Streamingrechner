@@ -7,7 +7,8 @@ export const theme = createTheme({
       main: '#70CEB9',
     },
     secondary: {
-      main: '#fff',
+      main: '#F5F7F6',
+      contrastText: "#111",
     },
   },
   typography: {
@@ -17,4 +18,7 @@ export const theme = createTheme({
   shape: {
     borderRadius: 10,
   },
+  key: {
+    color: "#cfe8fc"
+  }
 });

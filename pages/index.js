@@ -16,6 +16,22 @@ import MuiButton from '@mui/material/Button';
 import Info from '../public/info.svg';
 import BasicModal from '../components/modal';
 import Link from 'next/link'
+import PropTypes from 'prop-types';
+import AppBar from '@mui/material/AppBar';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+const drawerWidth = 240;
+const navItems = ['Rechenzentren', 'Netzwerke', 'Endgeraete'];
 
 const options = {
   scales: {
@@ -51,7 +67,38 @@ const MenuProps = {
   },
 };
 
-export default function Home() {
+export default function Home(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+        <div style={{'borderTop': 'rgba(0, 0, 0, 0.3) 1px solid'}}></div>
+        <ListItem disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemText primary="FAQ" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
+  );
+
+  const container = window !== undefined ? () => window().document.body : undefined;
+
+
   const [deviceName, setDeviceName] = React.useState(null);
   const [hasDeviceError, setHasDeviceError] = React.useState(false);
   const [connection, setConnection] = React.useState(null);
@@ -226,6 +273,51 @@ export default function Home() {
 
   return (
     <div>
+    <Box>
+      <AppBar component="nav" position="static" color={"secondary"} sx={{ boxShadow: '0 2px 4px -50px rgba(0, 0, 0, 0.2),2px 9px 13px -12px rgba(0, 0, 0, 0.14),0 1px 10px -50px rgba(0, 0, 0, 0.12)' }}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' }, color: 'black !important' }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box sx={{ display: { xs: 'none', sm: 'flex'}}}>
+            <div style={{display: 'flex', width: 'calc(100vw*0.95)'}}>
+              {navItems.map((item) => (
+                <Button key={item} href={item} sx={{color: 'black !important'}}>
+                  {item}
+                </Button>
+              ))}
+              <Button sx={{color: 'black !important', marginLeft: 'auto'}}>
+                FAQ
+              </Button>
+            </div>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          color="secondary"
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </Box>
     <div className={styles.site}>
       <h1 className={styles.title}>
         Streaming Energie- und CO2-Rechner
@@ -374,7 +466,7 @@ export default function Home() {
             Resultat:
         </h3>
         <p>
-          <strong>{emissions}</strong> g CO2e oder <strong>{energy}</strong> kWh
+          <strong style={{fontSize: '1.5rem'}}>{emissions}</strong> g CO2e oder <strong>{energy}</strong> kWh
         </p>
       </div>
 
@@ -449,7 +541,7 @@ export default function Home() {
     </main>
   </div>  
   <div style={{display: 'flex', justifyContent: 'center', marginTop: '5rem'}}>
-    <div className={styles.footer}>
+    <box className={styles.footer}>
         <div style={{textAlign: 'center'}}>Bachelorarbeit UZH</div>
         <div style={{textAlign: 'center'}}>© 2022</div>
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem', height: '40px' }}>
@@ -463,7 +555,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-    </div>
+    </box>
   </div>
   </div>
   );
