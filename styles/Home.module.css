@@ -23,7 +23,7 @@
 }
 
 .resultTextOne{
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1.5rem;
   margin-bottom: 5%;
 }
@@ -34,20 +34,26 @@
 }
 
 .resultTextThree{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.75);
 }
 
 .resultTextFour{
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.75);
+  width: 18rem;
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+  color: #3c4a53;
 }
 
 .resultTextFive{
+  margin-top: 2.25rem;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 

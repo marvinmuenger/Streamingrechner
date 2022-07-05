@@ -32,6 +32,7 @@ import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
 const navItems = ['Rechenzentren', 'Netzwerke', 'Endgeraete'];
+const kWhDataCenter = 0.0013;
 
 const options = {
   scales: {
@@ -79,15 +80,23 @@ export default function Home(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem component="a" href="/rechenzentren" disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Rechenzentren" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem component="a" href="/netzwerke" disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Netzwerke" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem component="a" href="/endgeraete" disablePadding>
+          <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Endgeräte" />
+          </ListItemButton>
+        </ListItem>
         <div style={{'borderTop': 'rgba(0, 0, 0, 0.3) 1px solid'}}></div>
-        <ListItem disablePadding>
+        <ListItem component="a" href="/faq" disablePadding>
           <ListItemButton sx={{ textAlign: 'center' }}>
             <ListItemText primary="FAQ" />
           </ListItemButton>
@@ -186,9 +195,9 @@ export default function Home(props) {
       setHasCountryError(false);
     }
     if (deviceName && connection && resolution && country) {
-      setDatacenter(parseFloat(country)*duration*0.021*parseFloat(resolution));
-      setNetwork(duration*parseFloat(connection)*parseFloat(resolution)*parseFloat(country));
-      setDevice(duration*parseFloat(deviceName)*parseFloat(country));
+      setDatacenter(parseFloat(country)*duration*kWhDataCenter);
+      setNetwork(parseFloat(country)*duration*parseFloat(connection)*parseFloat(resolution));
+      setDevice(parseFloat(country)*duration*parseFloat(deviceName));
 
       scrollToRef(myRef)
     }
@@ -243,7 +252,10 @@ export default function Home(props) {
   }
 
   const emissions = Math.round((datacenter+network+device)*100)/100;
-  const energy = Math.round(((datacenter+network+device)/country)*100)/100;
+  const energy = Math.round(((datacenter+network+device)/parseFloat(country))*100)/100;
+  const dataCenterPercentage = Math.round((datacenter/emissions)*100) || 0;
+  const networkPercentage = Math.round((network/emissions)*100) || 0;
+  const devicePercentage = Math.round((device/emissions)*100) || 0;
 
   function hideDeviceInput(){
     if (document.getElementById("TV").selected == true || document.getElementById("Computer").selected == true || document.getElementById("Notebook").selected == true){
@@ -287,12 +299,16 @@ export default function Home(props) {
           </IconButton>
           <Box sx={{ display: { xs: 'none', sm: 'flex'}}}>
             <div style={{display: 'flex', width: 'calc(100vw*0.95)'}}>
-              {navItems.map((item) => (
-                <Button key={item} href={item} sx={{color: 'black !important'}}>
-                  {item}
-                </Button>
-              ))}
-              <Button sx={{color: 'black !important', marginLeft: 'auto'}}>
+              <Button href="/rechenzentren" sx={{color: 'black !important'}}>
+                Rechenzentren
+              </Button>
+              <Button href="/netzwerke" sx={{color: 'black !important'}}>
+                Netzwerke
+              </Button>
+              <Button href="/endgeraete" sx={{color: 'black !important'}}>
+                Endgeräte
+              </Button>
+              <Button href="/faq" sx={{color: 'black !important', marginLeft: 'auto'}}>
                 FAQ
               </Button>
             </div>
@@ -466,7 +482,7 @@ export default function Home(props) {
             Resultat:
         </h3>
         <p>
-          <strong style={{fontSize: '1.5rem'}}>{emissions}</strong> g CO2e oder <strong>{energy}</strong> kWh
+          <strong style={{fontSize: '1.25rem'}}>{emissions}</strong> g CO2e oder <strong style={{fontSize: '1.25rem'}}>{energy || 0}</strong> kWh
         </p>
       </div>
 
@@ -495,10 +511,10 @@ export default function Home(props) {
               <img className={styles.datacenterSvg} src="datacenter.svg" onError="this.onerror=null; this.src='devices.png'"></img>
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
-              <h3 className={styles.resultTextOne}>Rechenzentren</h3>
-              <h3 className={styles.resultTextTwo}>{Math.round(datacenter*100) / 100} <span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
+              <h3 className={styles.resultTextOne}>Rechenzentren</h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(datacenter*100) / 100}<span className={styles.resultTextThree}> g CO2e</span></h3>
+              <p className={styles.resultTextFour}>entspricht in etwa: <strong>{dataCenterPercentage}%</strong> der Gesamtemissionen</p>
               <Link href="/rechenzentren">
                 <p className={styles.resultTextFive}>Erfahre mehr →</p>
               </Link>
@@ -512,10 +528,10 @@ export default function Home(props) {
               <img className={styles.networkSvg} src="network.svg" onError="this.onerror=null; this.src='devices.png'"></img>
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
-              <h3 className={styles.resultTextOne}>Netzwerke</h3>
-              <h3 className={styles.resultTextTwo}>{Math.round(network*100) / 100}<span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
+              <h3 className={styles.resultTextOne}>Netzwerke</h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(network*100) / 100}<span className={styles.resultTextThree}> g CO2e</span></h3>
+              <p className={styles.resultTextFour}>entspricht in etwa: <strong>{networkPercentage}%</strong> der Gesamtemissionen </p>
               <Link href="/netzwerke">
                 <p className={styles.resultTextFive}>Erfahre mehr →</p>
               </Link>
@@ -528,10 +544,10 @@ export default function Home(props) {
               <img className={styles.resultSvg} src="devices.svg" onError="this.onerror=null; this.src='devices.png'"></img>
             </foreignObject>
             <foreignObject x="40%" y="10%" width="100%" height="100%">
-              <h3 className={styles.resultTextOne}>Endgeräte</h3>
-              <h3 className={styles.resultTextTwo}>{Math.round(device*100) / 100} <span className={styles.resultTextThree}>g CO2e</span></h3>
-              <p className={styles.resultTextFour}>entspricht in etwa: </p>
               <br/>
+              <h3 className={styles.resultTextOne}>Endgeräte</h3>
+              <h3 className={styles.resultTextTwo}>{Math.round(device*100) / 100}<span className={styles.resultTextThree}> g CO2e</span></h3>
+              <p className={styles.resultTextFour}>entspricht in etwa: <strong>{devicePercentage}%</strong> der Gesamtemissionen </p>
               <Link href="/endgeraete">
                 <p className={styles.resultTextFive}>Erfahre mehr →</p>
               </Link>
