@@ -10,6 +10,10 @@
   display: none;
 }
 
+.faq {
+  padding: 1rem;
+}
+
 .chartcontainer {
   display: block;
 }
@@ -136,12 +140,14 @@
 
 .backButton{
   background-color: rgb(122,206,185);
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
+  offset-anchor: 20% 80%;
   float: left;
   margin-right: 0.5rem;
   border-radius: 50%;
   transition: 0.5s;
+  margin-top:2px; /* this is half the height of your div*/    
 }
 
 .backButton:hover{
@@ -152,6 +158,10 @@
 
 .backArrow{
   fill: white;
+  height: 80%;
+  width: 80%;
+  margin-top: -30%;
+  margin-left: 10%;
 }
 
 .settings {
@@ -303,5 +313,14 @@
 
   .resultEndgeräteContainer {
     grid-column: 3;
+  }
+}
+
+@media (min-width: 1300px) {
+  .backButton{
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-right: 0.5rem;
+    margin-top:2px; /* this is half the height of your div*/    
   }
 }
