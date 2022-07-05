@@ -424,7 +424,15 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={465}>Welt</option>
+                  <option value={55}>Schweiz</option>
+                  <option value={332}>Deutschland</option>
+                  <option value={68}>Frankreich</option>
+                  <option value={337}>Italien</option>
+                  <option value={42}>Schweden</option>
+                  <option value={142}>Finnland</option>
+                  <option value={143}>Österreich</option>
+                  <option value={200}>Spanien</option>
+                  <option value={246}>England</option>
                 </NativeSelect>
               </FormControl>
             </div>
