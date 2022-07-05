@@ -198,6 +198,7 @@ export default function Home(props) {
       setDatacenter(parseFloat(country)*duration*kWhDataCenter);
       setNetwork(parseFloat(country)*duration*parseFloat(connection)*parseFloat(resolution));
       setDevice(parseFloat(country)*duration*parseFloat(deviceName));
+      setEmissionFactor(parseFloat(country));
 
       scrollToRef(myRef)
     }
@@ -206,6 +207,7 @@ export default function Home(props) {
   const [datacenter, setDatacenter] = React.useState([]);
   const [network, setNetwork] = React.useState([]);
   const [device, setDevice] = React.useState([]);
+  const [emissionFactor, setEmissionFactor] = React.useState([]);
 
   const data = {
     labels: ['Videostreaming', '1km Autofahrt'],
@@ -252,7 +254,7 @@ export default function Home(props) {
   }
 
   const emissions = Math.round((datacenter+network+device)*100)/100;
-  const energy = Math.round(((datacenter+network+device)/parseFloat(country))*100)/100;
+  const energy = Math.round(((datacenter+network+device)/emissionFactor)*100)/100;
   const dataCenterPercentage = Math.round((datacenter/emissions)*100) || 0;
   const networkPercentage = Math.round((network/emissions)*100) || 0;
   const devicePercentage = Math.round((device/emissions)*100) || 0;
