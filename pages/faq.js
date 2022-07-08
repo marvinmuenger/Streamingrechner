@@ -59,7 +59,7 @@ export default function Home() {
             <h2>
                 Hier gibt es Antworten zu häufig gestellten Fragen.
             </h2>
-            <div style={{marginTop: "-2rem"}}>
+            <div style={{marginTop: "-2rem", marginLeft: "0.5rem", width: "95%"}}>
                 <Faq
                     data={data}
                     styles={faqstyles}

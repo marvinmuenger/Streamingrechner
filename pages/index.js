@@ -261,19 +261,17 @@ export default function Home(props) {
 
   function hideDeviceInput(){
     if (document.getElementById("TV").selected == true || document.getElementById("Computer").selected == true || document.getElementById("Notebook").selected == true){
-      document.getElementById("3G").setAttribute("disabled", "disabled");
       document.getElementById("4G").setAttribute("disabled", "disabled");
       document.getElementById("5G").setAttribute("disabled", "disabled");
     }
     else{
-      document.getElementById("3G").removeAttribute("disabled");
       document.getElementById("4G").removeAttribute("disabled");
       document.getElementById("5G").removeAttribute("disabled");
     }
   }
 
   function hideNetworkInput(){
-    if (document.getElementById("3G").selected == true || document.getElementById("4G").selected == true || document.getElementById("5G").selected == true){
+    if (document.getElementById("4G").selected == true || document.getElementById("5G").selected == true){
       document.getElementById("TV").setAttribute("disabled", "disabled");
       document.getElementById("Computer").setAttribute("disabled", "disabled");
       document.getElementById("Notebook").setAttribute("disabled", "disabled");
@@ -391,7 +389,7 @@ export default function Home(props) {
                   <option hidden selected></option>
                   <option value={0.6}>Standard Definition</option>
                   <option value={3}>High Definition</option>
-                  <option value={8.4}>Full-High Definition (2K)</option>
+                  <option value={8.4}>Full-High Definition</option>
                   <option value={24.6}>UHD 4K</option>  
                 </NativeSelect>
               </FormControl>
@@ -407,11 +405,9 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.0254}>WLAN (Glasfaser)</option>
-                  <option value={0.0270}>WLAN (Kupfer)</option>
-                  <option id="3G" value={0.0697}>3G</option>
-                  <option id="4G" value={0.0091}>4G</option>
-                  <option id="5G" value={0.0028}>5G</option>
+                  <option value={0.022}>WLAN</option>
+                  <option id="4G" value={0.08}>4G</option>
+                  <option id="5G" value={0.029}>5G</option>
                 </NativeSelect>
               </FormControl>
 
