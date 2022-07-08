@@ -13,10 +13,8 @@ import NativeSelect from '@mui/material/NativeSelect';
 import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
 import MuiButton from '@mui/material/Button';
-import Info from '../public/info.svg';
 import BasicModal from '../components/modal';
 import Link from 'next/link'
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
@@ -27,11 +25,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['Rechenzentren', 'Netzwerke', 'Endgeraete'];
 const kWhDataCenter = 0.0013;
 
 const options = {
@@ -145,7 +141,7 @@ export default function Home(props) {
     const {
       target: { value },
     } = event;
-    // set Country to value as int
+
     setCountry(value);
   };
 
@@ -388,9 +384,9 @@ export default function Home(props) {
                 >
                   <option hidden selected></option>
                   <option value={0.6}>Standard Definition</option>
-                  <option value={3}>High Definition</option>
-                  <option value={8.4}>Full-High Definition</option>
-                  <option value={24.6}>UHD 4K</option>  
+                  <option value={3}>Full HD</option>
+                  <option value={8.4}>2K</option>
+                  <option value={24.6}>4K</option>  
                 </NativeSelect>
               </FormControl>
 
