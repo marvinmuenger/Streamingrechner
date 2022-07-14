@@ -257,17 +257,19 @@ export default function Home(props) {
 
   function hideDeviceInput(){
     if (document.getElementById("TV").selected == true || document.getElementById("Computer").selected == true || document.getElementById("Notebook").selected == true){
+      document.getElementById("3G").setAttribute("disabled", "disabled");
       document.getElementById("4G").setAttribute("disabled", "disabled");
       document.getElementById("5G").setAttribute("disabled", "disabled");
     }
     else{
+      document.getElementById("3G").removeAttribute("disabled");
       document.getElementById("4G").removeAttribute("disabled");
       document.getElementById("5G").removeAttribute("disabled");
     }
   }
 
   function hideNetworkInput(){
-    if (document.getElementById("4G").selected == true || document.getElementById("5G").selected == true){
+    if (document.getElementById("3G").selected == true || document.getElementById("4G").selected == true || document.getElementById("5G").selected == true){
       document.getElementById("TV").setAttribute("disabled", "disabled");
       document.getElementById("Computer").setAttribute("disabled", "disabled");
       document.getElementById("Notebook").setAttribute("disabled", "disabled");
@@ -402,6 +404,7 @@ export default function Home(props) {
                 >
                   <option hidden selected></option>
                   <option value={0.022}>WLAN</option>
+                  <option id="3G" value={0.447}>3G</option>
                   <option id="4G" value={0.08}>4G</option>
                   <option id="5G" value={0.029}>5G</option>
                 </NativeSelect>

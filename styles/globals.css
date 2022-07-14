@@ -49,7 +49,6 @@ card {
   border-radius: 1rem;
   margin: 2rem 0;
   padding: min(4vw, 4rem);
-  /* box-shadow: 0 19px 30px -15px rgba(0,0,0,.1); */
 }
 
 button {
