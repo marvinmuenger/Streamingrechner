@@ -385,10 +385,9 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.6}>Standard Definition</option>
+                  <option value={1}>Standard Definition</option>
                   <option value={3}>Full HD</option>
-                  <option value={8.4}>2K</option>
-                  <option value={24.6}>4K</option>  
+                  <option value={7}>UHD 4K</option>  
                 </NativeSelect>
               </FormControl>
 
