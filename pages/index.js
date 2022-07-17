@@ -14,6 +14,7 @@ import Chart from 'chart.js/auto'
 import {Bar} from 'react-chartjs-2';
 import MuiButton from '@mui/material/Button';
 import BasicModal from '../components/modal';
+import Footer from '../components/footer';
 import Link from 'next/link'
 import AppBar from '@mui/material/AppBar';
 import Divider from '@mui/material/Divider';
@@ -469,7 +470,6 @@ export default function Home(props) {
                 </Grid>
               </Box>
             </div>
-
             <div>
               <MuiButton
                 onClick={executeSubmit}
@@ -480,7 +480,6 @@ export default function Home(props) {
           </div>
         </div>
       </card>
-
       <div ref={myRef} id="result" style={{textAlign: 'center', marginTop: '5rem'}}>
         <h3> 
             Resultat:
@@ -501,7 +500,7 @@ export default function Home(props) {
         </div>
       </card>
 
-      <div style={{textAlign: 'left', marginTop: '5rem'}}>
+      <div style={{textAlign: 'left', marginTop: '5rem', marginBottom: '-1rem'}}>
         <h3> 
             Zusammensetzung der CO2-Emissionen:
         </h3>
@@ -560,23 +559,7 @@ export default function Home(props) {
         </div>
     </main>
   </div>  
-  <div style={{display: 'flex', justifyContent: 'center', marginTop: '5rem'}}>
-    <box className={styles.footer}>
-        <div style={{textAlign: 'center'}}>Bachelorarbeit UZH</div>
-        <div style={{textAlign: 'center'}}>© 2022</div>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem', height: '40px' }}>
-        <div style={{display: 'grid', justifyContent: 'start', alignContent: 'center'}}>
-            <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector</a><a href="https://www.freepik.com/vectors/data-center">, data center vector</a><a href='https://www.freepik.com/vectors/mobile-tower'> and mobile tower vector</a><a href='https://www.freepik.com/'> created by macrovector - www.freepik.com</a></div>
-          </div>
-          <div style={{display: 'grid', justifyContent: 'end', alignContent: 'center'}}>
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem'}}>
-            <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
-            <div style={{width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
-            </div>
-          </div>
-        </div>
-    </box>
-  </div>
+    <Footer />
   </div>
   );
 }
