@@ -21,6 +21,9 @@ export default function Home() {
                 <main>
                     <card className={styles.settings}>
                         <div className={styles.cardText}>
+                            <p className={styles.paragraph}>
+                                Der Energieverbrauch.
+                            </p>
                         </div>
                     </card>
                 </main>

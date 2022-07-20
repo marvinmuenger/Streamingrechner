@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import React from "react";
 
 export default function Home() {
 
@@ -20,6 +21,9 @@ export default function Home() {
                 <main>
                     <card className={styles.settings}>
                         <div className={styles.cardText}>
+                            <p className={styles.paragraph}>
+                                Rechenzentren sind grosse Gebäude, in denen die Videodateien, die für das Streaming benötigt werden, gespeichert und für den jeweiligen Nutzer, der darauf zugreifen will, bereitgestellt werden. Ihr Energieverbrauch setzt sich aus Servern, der Kühlung der Server und der restlichen Infrastruktur zusammen. Zur Infrastruktur eines Rechenzentrums gehören komplexe Brandschutzsysteme, unterbrechungsfreie Stromversorgung, Sicherheitssysteme und sonstige Geräte, die für die Betreibung des Gebäudes nötig sind. Die Server sind für den grössten Teil des Energieverbrauchs verantwortlich. Nach den Servern hat die Kühlung den grössten Anteil am Energieverbrauch eines Rechenzentrums. Der Energieverbrauch durch die Kühlung und die restliche Infrastruktur hängen jedoch direkt von der Anzahl der Server und der Menge an Energie ab, die von den Servern in Wärme umgewandelt wird.
+                            </p>
                         </div>
                     </card>
                 </main>

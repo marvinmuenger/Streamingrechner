@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import React from "react";
 
 export default function Home() {
 
@@ -20,6 +21,9 @@ export default function Home() {
                 <main>
                     <card className={styles.settings}>
                         <div className={styles.cardText}>
+                            <p className={styles.paragraph}>
+                                Der Energieverbrauch.
+                            </p>
                         </div>
                     </card>
                 </main>
