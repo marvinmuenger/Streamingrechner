@@ -21,6 +21,7 @@ export default function Home() {
                 <main>
                     <card className={styles.textBoxPages}>
                         <p className={styles.cardTextPages}>
+                            Die Kommunikationsnetze verbrauchen bei der Übertragung der gewünschten Videodatei an den Nutzer des Streamingangebots Energie. Entscheidend für die Höhe des Energieverbrauch sind hier die Grösse der Videodatei und die Effizienz, wie diese übertragen wird. Dateien werden entweder über Kabel oder über Funkmasten übertragen. Generell verbraucht dabei die Übertragung über Mobilfunk mehr Energie. Glasfaserkabel und 5G sind ihren Vorgängern Kupferkabel, 3G und 4G klar vorzuziehen und ein Ausbau dieser Infrastruktur würde den Energieverbrauch reduzieren. Um die Grösse der Videodatei zu reduzieren und damit den Energieverbrauch zu senken, kann der Nutzer eine geringere Auflösung der gewünschten Videodatei wählen. Ausserdem ermöglichen Komprimierungsstandards immer effektivere Möglichkeiten, die Grösse der Videodateien zu reduzieren.
                         </p>
                     </card>
                 </main>
