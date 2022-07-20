@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/pages/endgeraete.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/endgeraete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/netzwerke.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/netzwerke.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/rechenzentren.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/rechenzentren.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,9 @@
       <workItem from="1656056975832" duration="6104000" />
       <workItem from="1656579021031" duration="11891000" />
       <workItem from="1656683326977" duration="1191000" />
-      <workItem from="1658302992836" duration="1011000" />
+      <workItem from="1658302992836" duration="1113000" />
+      <workItem from="1658304132840" duration="58000" />
+      <workItem from="1658304241685" duration="838000" />
     </task>
     <servers />
   </component>

@@ -174,6 +174,20 @@
   align-content: center;
 }
 
+.textBoxPages {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: 1fr;
+  padding: 2rem 1rem;
+  gap: 0;
+}
+
+.cardTextPages {
+  padding: 1rem 0.5rem;
+}
+
 .input {
   font-family: 'Avenir';
   line-height: 1.4375rem;

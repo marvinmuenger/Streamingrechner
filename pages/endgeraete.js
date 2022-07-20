@@ -19,12 +19,9 @@ export default function Home() {
                     Hier erfährst du mehr über die Engeräte.
                 </h2>
                 <main>
-                    <card className={styles.settings}>
-                        <div className={styles.cardText}>
-                            <p className={styles.paragraph}>
-                                Der Energieverbrauch.
-                            </p>
-                        </div>
+                    <card className={styles.textBoxPages}>
+                        <p className={styles.cardTextPages}>
+                        </p>
                     </card>
                 </main>
             </div>
