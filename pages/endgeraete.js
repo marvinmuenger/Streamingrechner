@@ -21,6 +21,7 @@ export default function Home() {
                 <main>
                     <card className={styles.textBoxPages}>
                         <p className={styles.cardTextPages}>
+                            Der Energieverbrauch des Endgeräts, auf dem gestreamt wird, hängt direkt mit der Bildschirmgrösse des Endgeräts zusammen. Grosse Fernseher haben einen massiv höheren Energieverbrauch als Handys, Tablets oder Notebooks. Jedoch ist bei Geräten wie Handys oder Tablets der Energieverbrauch durch die Produktion aufgrund ihrer kurzen Lebensdauer ebenfalls relevant. Durch den hohen Energieverbrauch grosser Fernseher während der Nutzung, sind kleinere Geräte wie Handys, Tablets oder Notebooks, was den Energieverbrauch betrifft, klar vorzuziehen. Durch die Wahl eines kleineren Geräts kann der Nutzer eine Menge Energie einsparen.
                         </p>
                     </card>
                 </main>
