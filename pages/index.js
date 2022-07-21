@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -120,6 +120,21 @@ export default function Home(props) {
     } = event;
     setDeviceName(value);
     hideDeviceInput();
+    if (document.getElementById("Smartphone").selected == true){
+      localStorage.setItem("device", "Smartphone");
+    }
+    else if (document.getElementById("Tablet").selected == true){
+      localStorage.setItem("device", "Tablet");
+    }
+    else if (document.getElementById("Notebook").selected == true){
+      localStorage.setItem("device", "Notebook");
+    }
+    else if (document.getElementById("Computer").selected == true){
+      localStorage.setItem("device", "Computer");
+    }
+    else if (document.getElementById("TV").selected == true){
+      localStorage.setItem("device", "TV");
+    }
   };
 
 
@@ -129,6 +144,18 @@ export default function Home(props) {
     } = event;
     setConnection(value);
     hideNetworkInput();
+    if (document.getElementById("3G").selected == true){
+      localStorage.setItem("network", "3G");
+    }
+    else if (document.getElementById("4G").selected == true){
+      localStorage.setItem("network", "4G");
+    }
+    else if (document.getElementById("5G").selected == true){
+      localStorage.setItem("network", "5G");
+    }
+    else if (document.getElementById("WLAN").selected == true){
+      localStorage.setItem("network", "WLAN");
+    }
   };
 
   const handleResolutionChange = (event) => {
@@ -136,6 +163,15 @@ export default function Home(props) {
       target: { value },
     } = event;
     setResolution(value);
+    if (document.getElementById("SD").selected == true){
+      localStorage.setItem("resolution", "SD");
+    }
+    else if (document.getElementById("FHD").selected == true){
+      localStorage.setItem("resolution", "FHD");
+    }
+    else if (document.getElementById("4K").selected == true){
+      localStorage.setItem("resolution", "4K");
+    }
   };
 
   const handleCountryChange = (event) => {
@@ -144,6 +180,33 @@ export default function Home(props) {
     } = event;
 
     setCountry(value);
+    if (document.getElementById("switzerland").selected == true){
+      localStorage.setItem("country", "switzerland");
+    }
+    else if (document.getElementById("germany").selected == true){
+      localStorage.setItem("country", "germany");
+    }
+    else if (document.getElementById("france").selected == true){
+      localStorage.setItem("country", "france");
+    }
+    else if (document.getElementById("italy").selected == true){
+      localStorage.setItem("country", "italy");
+    }
+    else if (document.getElementById("sweden").selected == true){
+      localStorage.setItem("country", "sweden");
+    }
+    else if (document.getElementById("finland").selected == true){
+      localStorage.setItem("country", "finland");
+    }
+    else if (document.getElementById("austria").selected == true){
+      localStorage.setItem("country", "austria");
+    }
+    else if (document.getElementById("spain").selected == true){
+      localStorage.setItem("country", "spain");
+    }
+    else if (document.getElementById("england").selected == true){
+      localStorage.setItem("country", "england");
+    }
   };
 
   const [duration, setDuration] = React.useState(2);
@@ -282,6 +345,29 @@ export default function Home(props) {
     }
   }
 
+  useEffect(() => {
+    if (localStorage.getItem("device") != null){
+      document.getElementById(localStorage.getItem("device")).setAttribute("selected", "selected");
+      setDeviceName(document.getElementById(localStorage.getItem("device")).value);
+      hideDeviceInput();
+    }
+    if (localStorage.getItem("resolution") != null){
+      document.getElementById(localStorage.getItem("resolution")).setAttribute("selected", "selected");
+      setResolution(document.getElementById(localStorage.getItem("resolution")).value);
+    }
+    if (localStorage.getItem("network") != null){
+      document.getElementById(localStorage.getItem("network")).setAttribute("selected", "selected");
+      setConnection(document.getElementById(localStorage.getItem("network")).value);
+      hideNetworkInput();
+    }
+    if (localStorage.getItem("country") != null){
+      document.getElementById(localStorage.getItem("country")).setAttribute("selected", "selected");
+      setCountry(document.getElementById(localStorage.getItem("country")).value);
+    }
+  }, []);
+
+    //console.log(document.getElementById(localStorage.getItem("device")).value);
+
   return (
     <div>
     <Box>
@@ -386,9 +472,9 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={1}>Standard Definition</option>
-                  <option value={3}>Full HD</option>
-                  <option value={7}>UHD 4K</option>  
+                  <option id="SD" value={1}>Standard Definition</option>
+                  <option id="FHD" value={3}>Full HD</option>
+                  <option id="4K" value={7}>UHD 4K</option>
                 </NativeSelect>
               </FormControl>
 
@@ -403,7 +489,7 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={0.022}>WLAN</option>
+                  <option id="WLAN" value={0.022}>WLAN</option>
                   <option id="3G" value={0.447}>3G</option>
                   <option id="4G" value={0.08}>4G</option>
                   <option id="5G" value={0.029}>5G</option>
@@ -421,15 +507,15 @@ export default function Home(props) {
                   MenuProps={MenuProps}
                 >
                   <option hidden selected></option>
-                  <option value={55}>Schweiz</option>
-                  <option value={332}>Deutschland</option>
-                  <option value={68}>Frankreich</option>
-                  <option value={337}>Italien</option>
-                  <option value={42}>Schweden</option>
-                  <option value={142}>Finnland</option>
-                  <option value={143}>Österreich</option>
-                  <option value={200}>Spanien</option>
-                  <option value={246}>England</option>
+                  <option id="switzerland" value={55}>Schweiz</option>
+                  <option id="germany" value={332}>Deutschland</option>
+                  <option id="france" value={68}>Frankreich</option>
+                  <option id="italy" value={337}>Italien</option>
+                  <option id="sweden" value={42}>Schweden</option>
+                  <option id="finland" value={142}>Finnland</option>
+                  <option id="austria" value={143}>Österreich</option>
+                  <option id="spain" value={200}>Spanien</option>
+                  <option id="england" value={246}>England</option>
                 </NativeSelect>
               </FormControl>
             </div>
