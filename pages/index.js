@@ -121,19 +121,19 @@ export default function Home(props) {
     setDeviceName(value);
     hideDeviceInput();
     if (document.getElementById("Smartphone").selected == true){
-      localStorage.setItem("device", "Smartphone");
+      sessionStorage.setItem("device", "Smartphone");
     }
     else if (document.getElementById("Tablet").selected == true){
-      localStorage.setItem("device", "Tablet");
+      sessionStorage.setItem("device", "Tablet");
     }
     else if (document.getElementById("Notebook").selected == true){
-      localStorage.setItem("device", "Notebook");
+      sessionStorage.setItem("device", "Notebook");
     }
     else if (document.getElementById("Computer").selected == true){
-      localStorage.setItem("device", "Computer");
+      sessionStorage.setItem("device", "Computer");
     }
     else if (document.getElementById("TV").selected == true){
-      localStorage.setItem("device", "TV");
+      sessionStorage.setItem("device", "TV");
     }
   };
 
@@ -145,16 +145,16 @@ export default function Home(props) {
     setConnection(value);
     hideNetworkInput();
     if (document.getElementById("3G").selected == true){
-      localStorage.setItem("network", "3G");
+      sessionStorage.setItem("network", "3G");
     }
     else if (document.getElementById("4G").selected == true){
-      localStorage.setItem("network", "4G");
+      sessionStorage.setItem("network", "4G");
     }
     else if (document.getElementById("5G").selected == true){
-      localStorage.setItem("network", "5G");
+      sessionStorage.setItem("network", "5G");
     }
     else if (document.getElementById("WLAN").selected == true){
-      localStorage.setItem("network", "WLAN");
+      sessionStorage.setItem("network", "WLAN");
     }
   };
 
@@ -164,13 +164,13 @@ export default function Home(props) {
     } = event;
     setResolution(value);
     if (document.getElementById("SD").selected == true){
-      localStorage.setItem("resolution", "SD");
+      sessionStorage.setItem("resolution", "SD");
     }
     else if (document.getElementById("FHD").selected == true){
-      localStorage.setItem("resolution", "FHD");
+      sessionStorage.setItem("resolution", "FHD");
     }
     else if (document.getElementById("4K").selected == true){
-      localStorage.setItem("resolution", "4K");
+      sessionStorage.setItem("resolution", "4K");
     }
   };
 
@@ -181,31 +181,31 @@ export default function Home(props) {
 
     setCountry(value);
     if (document.getElementById("switzerland").selected == true){
-      localStorage.setItem("country", "switzerland");
+      sessionStorage.setItem("country", "switzerland");
     }
     else if (document.getElementById("germany").selected == true){
-      localStorage.setItem("country", "germany");
+      sessionStorage.setItem("country", "germany");
     }
     else if (document.getElementById("france").selected == true){
-      localStorage.setItem("country", "france");
+      sessionStorage.setItem("country", "france");
     }
     else if (document.getElementById("italy").selected == true){
-      localStorage.setItem("country", "italy");
+      sessionStorage.setItem("country", "italy");
     }
     else if (document.getElementById("sweden").selected == true){
-      localStorage.setItem("country", "sweden");
+      sessionStorage.setItem("country", "sweden");
     }
     else if (document.getElementById("finland").selected == true){
-      localStorage.setItem("country", "finland");
+      sessionStorage.setItem("country", "finland");
     }
     else if (document.getElementById("austria").selected == true){
-      localStorage.setItem("country", "austria");
+      sessionStorage.setItem("country", "austria");
     }
     else if (document.getElementById("spain").selected == true){
-      localStorage.setItem("country", "spain");
+      sessionStorage.setItem("country", "spain");
     }
     else if (document.getElementById("england").selected == true){
-      localStorage.setItem("country", "england");
+      sessionStorage.setItem("country", "england");
     }
   };
 
@@ -213,6 +213,7 @@ export default function Home(props) {
 
   const handleSliderChange = (event, newDuration) => {
     setDuration(newDuration);
+    sessionStorage.setItem("duration", newDuration);
   };
 
   const handleInputChange = (event) => {
@@ -346,27 +347,28 @@ export default function Home(props) {
   }
 
   useEffect(() => {
-    if (localStorage.getItem("device") != null){
-      document.getElementById(localStorage.getItem("device")).setAttribute("selected", "selected");
-      setDeviceName(document.getElementById(localStorage.getItem("device")).value);
+    if (sessionStorage.getItem("device") != null){
+      document.getElementById(sessionStorage.getItem("device")).setAttribute("selected", "selected");
+      setDeviceName(document.getElementById(sessionStorage.getItem("device")).value);
       hideDeviceInput();
     }
-    if (localStorage.getItem("resolution") != null){
-      document.getElementById(localStorage.getItem("resolution")).setAttribute("selected", "selected");
-      setResolution(document.getElementById(localStorage.getItem("resolution")).value);
+    if (sessionStorage.getItem("resolution") != null){
+      document.getElementById(sessionStorage.getItem("resolution")).setAttribute("selected", "selected");
+      setResolution(document.getElementById(sessionStorage.getItem("resolution")).value);
     }
-    if (localStorage.getItem("network") != null){
-      document.getElementById(localStorage.getItem("network")).setAttribute("selected", "selected");
-      setConnection(document.getElementById(localStorage.getItem("network")).value);
+    if (sessionStorage.getItem("network") != null){
+      document.getElementById(sessionStorage.getItem("network")).setAttribute("selected", "selected");
+      setConnection(document.getElementById(sessionStorage.getItem("network")).value);
       hideNetworkInput();
     }
-    if (localStorage.getItem("country") != null){
-      document.getElementById(localStorage.getItem("country")).setAttribute("selected", "selected");
-      setCountry(document.getElementById(localStorage.getItem("country")).value);
+    if (sessionStorage.getItem("country") != null){
+      document.getElementById(sessionStorage.getItem("country")).setAttribute("selected", "selected");
+      setCountry(document.getElementById(sessionStorage.getItem("country")).value);
+    }
+    if (sessionStorage.getItem("duration") != null){
+      setDuration(Number(sessionStorage.getItem("duration")));
     }
   }, []);
-
-    //console.log(document.getElementById(localStorage.getItem("device")).value);
 
   return (
     <div>
