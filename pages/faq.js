@@ -7,6 +7,11 @@ const data = {
     title: "FAQ",
     rows: [
         {
+            title: "Was kann ich als Endnutzer tun, um den Energieverbrauch durch Streaming zu reduzieren?",
+            content: `Um den Energieverbrauch durch Streaming zu reduzieren, kann der Endnutzer eine niedrige Auflösung wählen, 
+            ein Handy als Endgerät verwenden, die Helligkeit des Endgeräts reduzieren und nicht über Mobilfunk streamen.`,
+        },
+        {
             title: "Lorem ipsum dolor sit amet,",
             content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
               ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
