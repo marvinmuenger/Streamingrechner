@@ -259,21 +259,21 @@ export default function Home(props) {
 
   useEffect(() => {
     if (sessionStorage.getItem("device") != null){
-      document.getElementById(sessionStorage.getItem("device")).setAttribute("selected", "selected");
+      document.getElementById(sessionStorage.getItem("device")).selected = "selected";
       setDeviceName(document.getElementById(sessionStorage.getItem("device")).value);
       hideDeviceInput();
     }
     if (sessionStorage.getItem("resolution") != null){
-      document.getElementById(sessionStorage.getItem("resolution")).setAttribute("selected", "selected");
+      document.getElementById(sessionStorage.getItem("resolution")).selected = "selected";
       setResolution(document.getElementById(sessionStorage.getItem("resolution")).value);
     }
     if (sessionStorage.getItem("network") != null){
-      document.getElementById(sessionStorage.getItem("network")).setAttribute("selected", "selected");
+      document.getElementById(sessionStorage.getItem("network")).selected = "selected";
       setConnection(document.getElementById(sessionStorage.getItem("network")).value);
       hideNetworkInput();
     }
     if (sessionStorage.getItem("country") != null){
-      document.getElementById(sessionStorage.getItem("country")).setAttribute("selected", "selected");
+      document.getElementById(sessionStorage.getItem("country")).selected = "selected";
       setCountry(document.getElementById(sessionStorage.getItem("country")).value);
     }
     if (sessionStorage.getItem("duration") != null){
@@ -310,13 +310,13 @@ export default function Home(props) {
                 <div className={styles.cardWrapper}>
                 <div className={styles.selectContainer}>
                   <FormControl className={styles.select} error={hasDeviceError}>
-                    <InputLabel id="device-name-label">Gerät</InputLabel>
+                    <InputLabel id="device-name-label" shrink={deviceName}>Gerät</InputLabel>
                     <NativeSelect
                       labelId="device-label"
                       id="device-name"
                       value={deviceName}
                       onChange={handleDeviceChange}
-                      input={<OutlinedInput label="Device" />}
+                      input={<OutlinedInput notched={deviceName} label="Device" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -329,13 +329,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hasResolutionError}>
-                    <InputLabel id="resolution-name-label">Auflösung</InputLabel>
+                    <InputLabel id="resolution-name-label" shrink={resolution}>Auflösung</InputLabel>
                     <NativeSelect
                       labelId="resolution-label"
                       id="device-name"
                       value={resolution}
                       onChange={handleResolutionChange}
-                      input={<OutlinedInput label="Resolution" />}
+                      input={<OutlinedInput notched={resolution} label="Resolution" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -346,13 +346,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hastConnectionError}>
-                    <InputLabel id="network-name-label">Netzwerk</InputLabel>
+                    <InputLabel id="network-name-label" shrink={connection}>Netzwerk</InputLabel>
                     <NativeSelect
                       labelId="network-label"
                       id="network-name"
                       value={connection}
                       onChange={handleNetworkChange}
-                      input={<OutlinedInput label="Connection" />}
+                      input={<OutlinedInput notched={connection} label="Connection" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -364,13 +364,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hasCountryError}>
-                    <InputLabel id="country-name-label">Land</InputLabel>
+                    <InputLabel id="country-name-label" shrink={country}>Land</InputLabel>
                     <NativeSelect
                       labelId="country-label"
                       id="country-name"
                       value={country}
                       onChange={handleCountryChange}
-                      input={<OutlinedInput label="Land" />}
+                      input={<OutlinedInput notched={country} label="Land" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
