@@ -10,7 +10,7 @@ export default function Footer() {
                 <div style={{textAlign: 'center'}}>© 2022</div>
                 <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', marginTop: '1rem', height: '40px' }}>
                 <div style={{display: 'grid', justifyContent: 'start', alignContent: 'center'}}>
-                    <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector</a><a href="https://www.freepik.com/vectors/data-center">, data center vector</a><a href='https://www.freepik.com/vectors/mobile-tower'>, pdf vector </a><a href='https://www.flaticon.com/de/kostenloses-icon/pdf-datei_80942?term=pdf&page=1&position=7&page=1&position=7&related_id=80942&origin=tag'>, and mobile tower vector</a><a href='https://www.freepik.com/'> created by macrovector - www.freepik.com</a></div>
+                    <div style={{lineHeight: '0.75rem'}}><a href='https://www.freepik.com/vectors/smart-devices'>Smart devices vector</a><a href="https://www.freepik.com/vectors/data-center">, data center vector</a><a href='https://www.freepik.com/vectors/mobile-tower'>, mobile tower vector </a><a href='https://www.flaticon.com/de/kostenloses-icon/pdf-datei_80942?term=pdf&page=1&position=7&page=1&position=7&related_id=80942&origin=tag'>, and pdf vector</a><a href='https://www.freepik.com/'> created by macrovector - www.freepik.com</a></div>
                 </div>
                 <div style={{display: 'grid', justifyContent: 'end', alignContent: 'center'}}>
                 <div style={{display: 'grid', gridTemplateRows: 'repeat(2, 1fr)'}}>
