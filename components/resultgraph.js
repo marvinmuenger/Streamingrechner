@@ -60,7 +60,7 @@ export default function Resultgraph(props) {
         {
             label: 'Autofahrt',
             barPercentage: 0.7,
-            data: [0, 185],
+            data: [0, props.Car],
             stack:"",
             backgroundColor: [
             '#9EA4D2',

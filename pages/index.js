@@ -57,7 +57,7 @@ const MenuProps = {
   },
 };
 
-export default function Home(props) {
+export default function Home() {
   const [deviceName, setDeviceName] = React.useState(null);
   const [hasDeviceError, setHasDeviceError] = React.useState(false);
   const [connection, setConnection] = React.useState(null);
@@ -71,6 +71,8 @@ export default function Home(props) {
   const [device, setDevice] = React.useState([]);
   const [emissionFactor, setEmissionFactor] = React.useState([]);
   const [duration, setDuration] = React.useState(1);
+  const [car, setCar] = React.useState(null);
+  const [clicked, setClicked] = React.useState(false);
   const myRef = useRef(null)
 
   const emissions = Math.round((datacenter+network+device)*100)/100;
@@ -222,12 +224,12 @@ export default function Home(props) {
   }
 
   function setValues() {
-    console.log('Form submitted!');
     if (deviceName && connection && resolution && country) {
       setDatacenter(parseFloat(country)*duration*kWhDataCenter);
       setNetwork(parseFloat(country)*duration*parseFloat(connection)*parseFloat(resolution));
       setDevice(parseFloat(country)*duration*parseFloat(deviceName));
       setEmissionFactor(parseFloat(country));
+      setCar(143);
     }
   }
 
@@ -279,9 +281,12 @@ export default function Home(props) {
     if (sessionStorage.getItem("duration") != null){
       setDuration(Number(sessionStorage.getItem("duration")));
     }
-    setValues();
+    setClicked(!clicked);
+  }, []);
 
-  }, [setValues]);
+  useEffect(() => {
+    setValues();
+  }, [clicked]);
 
   return (
     <div>
@@ -310,13 +315,13 @@ export default function Home(props) {
                 <div className={styles.cardWrapper}>
                 <div className={styles.selectContainer}>
                   <FormControl className={styles.select} error={hasDeviceError}>
-                    <InputLabel id="device-name-label" shrink={deviceName}>Gerät</InputLabel>
+                    <InputLabel id="device-name-label" shrink={!!deviceName}>Gerät</InputLabel>
                     <NativeSelect
                       labelId="device-label"
                       id="device-name"
                       value={deviceName}
                       onChange={handleDeviceChange}
-                      input={<OutlinedInput notched={deviceName} label="Device" />}
+                      input={<OutlinedInput notched={!!deviceName} label="Device" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -329,13 +334,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hasResolutionError}>
-                    <InputLabel id="resolution-name-label" shrink={resolution}>Auflösung</InputLabel>
+                    <InputLabel id="resolution-name-label" shrink={!!resolution}>Auflösung</InputLabel>
                     <NativeSelect
                       labelId="resolution-label"
                       id="device-name"
                       value={resolution}
                       onChange={handleResolutionChange}
-                      input={<OutlinedInput notched={resolution} label="Resolution" />}
+                      input={<OutlinedInput notched={!!resolution} label="Resolution" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -346,13 +351,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hastConnectionError}>
-                    <InputLabel id="network-name-label" shrink={connection}>Netzwerk</InputLabel>
+                    <InputLabel id="network-name-label" shrink={!!connection}>Netzwerk</InputLabel>
                     <NativeSelect
                       labelId="network-label"
                       id="network-name"
                       value={connection}
                       onChange={handleNetworkChange}
-                      input={<OutlinedInput notched={connection} label="Connection" />}
+                      input={<OutlinedInput notched={!!connection} label="Connection" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -364,13 +369,13 @@ export default function Home(props) {
                   </FormControl>
 
                   <FormControl className={styles.select} error={hasCountryError}>
-                    <InputLabel id="country-name-label" shrink={country}>Land</InputLabel>
+                    <InputLabel id="country-name-label" shrink={!!country}>Land</InputLabel>
                     <NativeSelect
                       labelId="country-label"
                       id="country-name"
                       value={country}
                       onChange={handleCountryChange}
-                      input={<OutlinedInput notched={country} label="Land" />}
+                      input={<OutlinedInput notched={!!country} label="Land" />}
                       MenuProps={MenuProps}
                     >
                       <option hidden selected></option>
@@ -440,6 +445,7 @@ export default function Home(props) {
               Network = { network }
               Emissions = { emissions }
               Energy = { energy }
+              Car = { car }
             />
           </div>
 
