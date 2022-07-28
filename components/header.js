@@ -31,32 +31,42 @@ export default function Header(props) {
       <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
         <Divider />
         <List>
-          <ListItem component="a" href="/" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Übersicht" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem component="a" href="/rechenzentren" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Rechenzentren" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem component="a" href="/netzwerke" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Netzwerke" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem component="a" href="/endgeraete" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Endgeräte" />
-            </ListItemButton>
-          </ListItem>
+          <Link href="/" passHref>
+            <ListItem component="a" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="Übersicht" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/rechenzentren" passHref>
+            <ListItem component="a" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="Rechenzentren" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/netzwerke" passHref>
+            <ListItem component="a" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="Netzwerke" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/endgeraete" passHref>
+            <ListItem component="a" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="Endgeräte" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
           <div style={{'borderTop': 'rgba(0, 0, 0, 0.3) 1px solid'}}></div>
-          <ListItem component="a" href="/faq" disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="FAQ" />
-            </ListItemButton>
-          </ListItem>
+          <Link href="/faq" passHref>
+            <ListItem component="a" disablePadding>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary="FAQ" />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         </List>
       </Box>
     );
