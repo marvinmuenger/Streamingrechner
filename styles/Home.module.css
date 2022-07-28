@@ -175,10 +175,9 @@
 
 .backArrow{
   fill: white;
-  height: 80%;
-  width: 80%;
-  margin-top: -30%;
-  margin-left: 10%;
+  display: block;
+  width: 1.5rem;
+  margin: auto;
 }
 
 .settings {
@@ -236,11 +235,21 @@
 }
 
 .footer {
+  position: static;
   bottom: 0;
   width: 90%;
   padding: 2rem;
   /* border-top: rgba(0, 0, 0, 0.3) 1px solid; */
   box-shadow: 0 2px 4px -50px rgba(0, 0, 0, 0.2),2px -9px 13px -12px rgba(0, 0, 0, 0.14),0 1px 10px -50px rgba(0, 0, 0, 0.12);
+}
+
+.spaceFooter { 
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
 }
 
 @media (max-width: 900px) {
