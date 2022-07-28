@@ -12,11 +12,13 @@ const data = {
             ein Handy als Endgerät verwenden, die Helligkeit des Endgeräts reduzieren und nicht über Mobilfunk streamen.`,
         },
         {
-            title: "Lorem ipsum dolor sit amet,",
-            content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-              Fusce sed commodo purus, at tempus turpis.`,
+            title: "Was können Rechenzentren tun, um ihren Energieverbrauch zu reduzieren?",
+            content: `Rechenzentren können ihren Energieverbrauch reduzieren, in dem sie die Energieeffizienz und die Auslastung ihrer Server erhöhen. Ausserdem gibt es verschiedene nachhaltige
+            Konzepte wie die freie Kühlung, um den Energieverbrauch durch die Kühlung zu reduzieren.`,
+        },
+        {
+            title: "Verbraucht Mobilfunk oder Festnetz weniger Energie?",
+            content: `Datenübertragung über Festnetz verbraucht eindeutig weniger Energie als die Übertragung über Mobilfunk.`,
         },
         {
             title: "Nunc maximus, magna at ultricies elementum",
