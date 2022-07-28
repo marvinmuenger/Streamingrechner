@@ -2,15 +2,85 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-align: center;
+  font-family:  Arial, sans-serif;
+  text-align: left;
+  background: #F5F7F6;
+  mix-blend-mode: normal;
+  color:#111;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-size: 0.6rem;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 3rem 0.4rem;
+  font-weight: 650;
+}
+
+h2 {
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #111;
+  margin: 3em 0.4rem;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 2.1rem;
+  font-size: max(calc(0.75vw + 0.25rem), 1.2rem);
+}
+
+p {
+  line-height: 1.75rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+card {
+  background-color: white;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: min(4vw, 4rem);
+}
+
+button {
+  height: 2.75rem !important;
+  color: #fff !important;
 }
 
 * {
   box-sizing: border-box;
 }
+
+@media (max-width: 650px) {
+  a {
+    font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 1300px) {  
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+

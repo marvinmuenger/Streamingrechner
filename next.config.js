@@ -3,4 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ['flagcdn.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
+}
