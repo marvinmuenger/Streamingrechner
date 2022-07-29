@@ -40,7 +40,7 @@ const faqstyles = {
     bgColor: '#F5F7F6',
     titleTextColor: "#F5F7F6",
     rowTitleColor: "black",
-    rowContentColor: 'grey',
+    rowContentColor: 'darkslategray',
 };
 
 const config = {
