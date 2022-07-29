@@ -10,30 +10,29 @@ const data = {
     rows: [
         {
             title: "Was kann ich als Endnutzer tun, um den Energieverbrauch durch Streaming zu reduzieren?",
-            content: `Um den Energieverbrauch durch Streaming zu reduzieren, kann der Endnutzer eine niedrige Auflösung wählen, 
-            ein Handy als Endgerät verwenden, die Helligkeit des Endgeräts reduzieren und nicht über Mobilfunk streamen.`,
+            content: `Ein kleineres Gerät wie ein Tablet oder ein Smartphone verbraucht weniger Energie. Die Helligkeit des Endgeräts kann reduziert werden und am umweltfreundlichsten ist es, über das Festnetz oder das 5G-Mobilfunknetz mit einer niedrigen Auflösung zu streamen.`,
         },
         {
             title: "Was können Rechenzentren tun, um ihren Energieverbrauch zu reduzieren?",
-            content: `Rechenzentren können ihren Energieverbrauch reduzieren, in dem sie die Energieeffizienz und die Auslastung ihrer Server erhöhen. Ausserdem gibt es verschiedene nachhaltige
+            content: `Rechenzentren können ihren Energieverbrauch reduzieren, indem sie die Energieeffizienz und die Auslastung der Server erhöhen. Abgesehen davon bietet Software mit der Konsolidierung und Virtualisierung von Rechenzentrumsarbeitslasten in die Cloud erhebliche Effizienzgewinne. Zuletzt gibt es verschiedene nachhaltige
             Konzepte wie die freie Kühlung, um den Energieverbrauch durch die Kühlung zu reduzieren.`,
         },
         {
-            title: "Verbraucht Mobilfunk oder Festnetz weniger Energie?",
-            content: `Datenübertragung über Festnetz verbraucht eindeutig weniger Energie als die Übertragung über Mobilfunk.`,
+            title: "Ist es umweltfreundlicher mit dem Mobilfunknetz oder mit dem Festnetz zu streamen?",
+            content: `Die Datenübertragung über das Festnetz benötigt weniger Energie als die Übertragung über das Mobilfunknetz. Beim Mobilfunknetz gibt es insbesondere erhebliche Unterschiede zwischen den verschiedenen Netzwerkgenerationen. Mit der fünften Mobilfunkgeneration 5G (LTE) wird mittlerweile eine hohe Datenrate, kurze Latenzzeit und gute Skalierbarkeit geboten, sodass der Unterschied zum Festnetz nicht mehr gross ist.`,
         },
         {
-            title: "Nunc maximus, magna at ultricies elementum",
-            content:
-                "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+            title: "Weshalb ist die CO2-Auslastung in den verschiedenen Ländern unterschiedlich gross?",
+            content: `Die Emissionen werden mit einem länderspezifischen Strommix berechnet. Verschiedene Länder erzeugen, importieren und nutzen Energien auf unterschiedliche Art und Weise und setzen unterschiedliche Mischungen aus erneuerbaren und konventionellen Energien ein. Auch wenn der Stromverbrauch in den Ländern gleich gross ist, hat der Strommix zuletzt einen entscheidenden Einfluss auf die Umweltauswirkungen.`,
         },
         {
-            title: "Curabitur laoreet, mauris vel blandit fringilla",
-            content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+            title: "Wie exakt sind die Angaben zu den Energie- und Emissionswerten?",
+            content: `Die Berechnungen basieren auf Literaturdaten, die den aktuellen Forschungsstand wiederspiegeln. Da keine eindeutige Berechnungsmethode vorliegt, sind die Angaben implizit mit einigen Limitation verbunden. Zum Einen wurde jeweils nur die Nutzungsphase der Geräte betrachtet (ohne Herstellung und Transport). Ausserdem gibt es Unsicherheiten bei der Berechnung des Energieverbrauchs von Netzkomponenten, da es derzeit an quantitativen Daten mangelt und geeignete Berechnungsmethoden weiter validiert und verfeinert werden müssen.`,
         },
+        {
+            title: "Wie wird sich der Energieverbrauch in der Zukunft entwickeln?",
+            content: `Es werden für die Zukunft noch weitere Effizienzsteigerungen erwartet, die den Energieverbrauch und damit die THG-Emissionen einer Stunde Videostreaming weiter senken werden. Gleichermassen wird jedoch erwartet, dass der weltweite Videokonsum weiter steigt, sodass die Gesamtemissionen voraussichtlich auf einem konstanten Niveau stagnieren oder gar ansteigen.`,
+        }
     ],
 };
 
@@ -42,13 +41,11 @@ const faqstyles = {
     titleTextColor: "#F5F7F6",
     rowTitleColor: "black",
     rowContentColor: 'grey',
-    // arrowColor: "red",
 };
 
 const config = {
-    // animate: true,
-    // arrowIcon: "V",
-    // tabFocus: true
+    animate: true,
+    tabFocus: true
 };
 
 export default function Home() {
