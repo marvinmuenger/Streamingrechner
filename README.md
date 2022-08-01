@@ -1,8 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Streaming Energie- und CO2-Rechner
+
+
+## Thesis
+
+This application was developed for a BSc project at the University of Zurich. The website can be accessed at: https://streaming-co2-rechner.ch.
 
 ## Getting Started
 
-Thank you for checking out our project, your feedback and contributions are welcome!
+Your feedback and contributions are welcome!
 
 Follow these instructions to start developing.
 
