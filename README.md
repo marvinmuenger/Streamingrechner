@@ -1,8 +1,6 @@
 # Streaming Energie- und CO2-Rechner
 
 
-## Thesis
-
 This application was developed for a BSc project at the University of Zurich. The website can be accessed at: https://streaming-co2-rechner.ch.
 
 ## Getting Started
