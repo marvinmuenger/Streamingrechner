@@ -16,7 +16,7 @@ export default function Footer() {
                 <div style={{display: 'grid', gridTemplateRows: 'repeat(2, 1fr)'}}>
                 <div style={{fontSize: '0.75rem'}}>PDF Bachelorarbeiten</div>
                     <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginTop: '-0.5rem'}}>
-                    <Link  href='/files/test.pdf' passHref alt='Energieverbrauch und CO2-Emissionen durch Videostreaming in Abhängigkeit von technischen und geographischen Parametern' target='_blank' rel='noopener norefferer'>
+                    <Link  href='/files/Bachelorarbeit_Muenger.pdf' passHref alt='Energieverbrauch und CO2-Emissionen durch Videostreaming in Abhängigkeit von technischen und geographischen Parametern' target='_blank' rel='noopener norefferer'>
                         <div style={{width: '40px', height: '40px', cursor: 'pointer', borderRadius: '50%', backgroundColor: '#cfe0ea', display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src='/pdf-datei.png' width='14.5px' className={styles.filterColor}/></div>
                     </Link>
                     <Link  href='/files/test.pdf' passHref alt='Energieverbrauch und CO2-Emissionen durch Videostreaming in Abhängigkeit von technischen und geographischen Parametern' target='_blank' rel='noopener norefferer'>
