@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="250f9fc9-add3-4aa8-9d27-b082522e9ccf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/faq.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/faq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="PRINT_LINE_NUMBERS" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,7 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jonas/Documents/GitHub/Streamingrechner&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jonas/Desktop&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
@@ -82,6 +87,8 @@
       <workItem from="1658725320564" duration="6015000" />
       <workItem from="1658912504549" duration="2242000" />
       <workItem from="1658999230874" duration="303000" />
+      <workItem from="1659601793245" duration="2698000" />
+      <workItem from="1659887900588" duration="1239000" />
     </task>
     <servers />
   </component>
