@@ -10,7 +10,7 @@ export default function Cards(props) {
                 <svg className={styles.resultRechenzentrenContainer} width='100%' viewBox="0 0 510 395" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.1" d="M62.1634 40.5224C66.705 16.9969 87.297 0 111.257 0H459.999C487.614 0 509.999 22.3858 509.999 50V308C509.999 335.614 487.614 358 459.999 358H61.45C30.034 358 6.40147 329.369 12.3564 298.522L62.1634 40.5224Z" fill="#68C9BA"/>
                 <path d="M472.682 124.03C502.313 153.207 467.325 181.381 405.745 182.141C283.317 175.137 255.69 81.0076 264.943 59.9029C274.196 38.7983 301.746 38.2223 342.567 81.2153C383.388 124.208 435.643 87.5574 472.682 124.03Z" stroke="white" strokeWidth="1.5"/>
-                <foreignObject x="-10%" y="20%" width="100%" height="100%">
+                <foreignObject x="-10%" y="20%" width="90%" height="100%">
                     <img className={styles.datacenterSvg} alt="datacenter" src="datacenter.svg" onError="this.onerror=null; this.src='devices.png'"></img>
                 </foreignObject>
                 <foreignObject x="40%" y="10%" width="100%" height="100%">
